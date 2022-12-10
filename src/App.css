@@ -2,6 +2,52 @@
   text-align: center;
 }
 
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.topScores .members {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.creditsTeam {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  /* border: 2px solid red; */
+  /* align-items: center; */
+}
+
+li {
+  list-style: none;
+  padding-bottom: 20px;
+}
+
+.mattEmail {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+.divBtn {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -32,6 +78,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
