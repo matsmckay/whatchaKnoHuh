@@ -1,4 +1,3 @@
-import './App.css';
 import { Link, Routes, Route, } from 'react-router-dom';
 import './Route.css';
 import Home from './Home.js';
@@ -13,11 +12,37 @@ import ErrorPage from './ErrorPage.js';
 
 function App() {
   return (
-    <div className="App">
-      <h1>SQUAAAAD UUPPP </h1>
-      <FetchCall />
-      
-   
+    <div>
+      <h1>Da **** do you know??</h1>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/leaderboard">Leaderboard</Link>
+          </li>
+          <li>
+            <Link to="/credits">Credits</Link>
+          </li>
+        </ul>
+      </nav>
+
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+        <Route path="/leaderboard" element={<Leaderboard />}></Route>
+
+        <Route path="/credits/" element={<Credits />} >
+          <Route path="radojko" element={<Radojko />} />
+          <Route path="daman" element={<Daman />} />
+          <Route path="tyler" element={<Tyler />} />
+          <Route path="matt" element={<Matt />} />
+        </Route>
+        <Route path="*" element={<ErrorPage />} />
+
+      </Routes>
     </div>
   );
 }
