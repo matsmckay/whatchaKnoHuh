@@ -1,50 +1,14 @@
-import { Link, Routes, Route, } from 'react-router-dom';
 import './App.css';
-import Home from './Home.js';
-import Leaderboard from './Leaderboard.js';
-import Credits from './Credits.js';
-import Skillz from './Skillz.js';
-import Matt from './Matt.js';
-import Daman from './Daman.js';
-import Radojko from './Radojko.js';
-import Tyler from './Tyler.js';
-import ErrorPage from './ErrorPage.js';
+import FetchCall from './comp/FetchCall';
+import Leaderboard from './comp/Leaderboard';
 
 function App() {
   return (
-    <div>
-      <h1>Da **** do you know??</h1>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/leaderboard">Leaderboard</Link>
-          </li>
-          <li>
-            <Link to="/credits">Credits</Link>
-          </li>
-        </ul>
-      </nav>
+    <div className="App">
+      <h1>SQUAAAAD UUPPP </h1>
+      <FetchCall />
+      <Leaderboard />
 
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-
-        <Route path="/leaderboard" element={<Leaderboard />}></Route>
-
-        <Route path="/credits/" element={<Credits />} >
-          <Route path="radojko" element={<Radojko />} />
-          <Route path="daman" element={<Daman />} />
-          <Route path="tyler" element={<Tyler />} />
-          <Route path="matt" element={<Matt />} >
-            <Route path=":myTalent" element={<Skillz />} />
-          </Route>
-        </Route>
-        <Route path="*" element={<ErrorPage />} />
-
-      </Routes>
     </div>
   );
 }
