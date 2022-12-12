@@ -40,6 +40,8 @@ const Leaderboard = () => {
 
   }
 
+  // DONT FORGET TO REMOVE THIS WHEN FINISHED !!!!
+
   const handleRemove = (event) => {
     event.preventDefault();
 
