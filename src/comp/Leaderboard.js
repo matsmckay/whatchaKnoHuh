@@ -8,7 +8,7 @@ const Leaderboard = () => {
   const [userInput, setUserInput] = useState([]);
 
   useEffect( () => {
-    const databse = getDatabase(app);
+    const database = getDatabase(app);
     const dbRef = ref(database);
 
     onValue(dbRef, (response) => {
@@ -37,7 +37,7 @@ const Leaderboard = () => {
 
     push(dbRef, userInput);
     setUserInput('');
-    
+
   }
 
   return(
