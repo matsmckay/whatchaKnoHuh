@@ -1,5 +1,5 @@
 import app from '../firebase.js';
-import {push, ref, getDatabase, onValue, } from 'firebase/database';
+import {push, ref, getDatabase, onValue, remove, } from 'firebase/database';
 import { useEffect, useState } from 'react';
 
 const Leaderboard = () => {
@@ -40,6 +40,15 @@ const Leaderboard = () => {
 
   }
 
+  const handleRemove = (event) => {
+    event.preventDefault();
+
+    const database = getDatabase(app);
+    const dbRef = ref(database);
+
+    remove(dbRef);
+  }
+ 
   return(
     <div>
       <h1>Leaderboard</h1>
@@ -59,6 +68,7 @@ const Leaderboard = () => {
           <label htmlFor="newUsername">Please enter your name:</label>
           <input type="text" id="newUsername" onChange={handleInputChange} value={userInput} />
           <button onClick={handleSubmit}>Yeeeeeeah!</button>
+          <button onClick={handleRemove}>clear</button>
         </form>
     </div>
   )
