@@ -6,6 +6,7 @@ function App() {
     <div className="App">
       <h1>SQUAAAAD UUPPP </h1>
       <FetchCall />
+      
    
     </div>
   );
