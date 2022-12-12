@@ -9,37 +9,45 @@ import useRandom from "../hooks/useRandom";
 const FetchCall = () => {
 
     const [homoWords, setHomoWords] = useState([]);
+    const [button, setButton] = useState(null)
 
     
     let randomWord = useRandom();
 
-    const handleClick = () => {
-        console.log('click');
-    }
-  
     
-    useEffect(() => {
-        
+    
+    useEffect (() => {
 
-        axios({
+
+        const runIt =( ) => {
+            axios({
           url: `https://api.datamuse.com/words`,
           method: "GET",
           dataResponse: "json",
           params: {
               rel_hom: randomWord,
               max: 2,
-          },
+            },
         }).then((response) => {
             //NEXT STEP : ADD error handling for when only one word is returned - have the api run again until two words are returned
             const similarSound = response.data; 
             setHomoWords(similarSound);
             console.log(similarSound);
-           
+            console.log(button)
+            
         })
+        }
         
+        runIt()
+    }, [button])
+    
+
+    
+    const handleClick = (e) => {
+
+        setButton(e.target.event)
 
     }
-    ,[])
     
     console.log(randomWord);
     console.log(homoWords);
