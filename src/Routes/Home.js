@@ -1,4 +1,5 @@
 import { Link, Outlet } from 'react-router-dom'
+
 import FetchCall from '../comp/FetchCall';
 import Leaderboard from './Leaderboard';
 
