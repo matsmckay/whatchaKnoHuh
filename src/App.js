@@ -1,14 +1,13 @@
-import './App.css';
 import { Link, Routes, Route, } from 'react-router-dom';
-import './Route.css';
-import Home from './Home.js';
-import Leaderboard from './Leaderboard.js';
-import Credits from './Credits.js';
-import Matt from './Matt.js';
-import Daman from './Daman.js';
-import Radojko from './Radojko.js';
-import Tyler from './Tyler.js';
-import ErrorPage from './ErrorPage.js';
+import './Routes/Route.css';
+import Home from './Routes/Home.js';
+import Leaderboard from './Routes/Leaderboard.js';
+import Credits from './Routes/Credits.js';
+import Matt from './Routes/Matt.js';
+import Daman from './Routes/Daman.js';
+import Radojko from './Routes/Radojko.js';
+import Tyler from './Routes/Tyler.js';
+import ErrorPage from './Routes/ErrorPage';
 
 
 function App() {
