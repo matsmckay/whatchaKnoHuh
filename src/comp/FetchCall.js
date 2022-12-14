@@ -4,67 +4,57 @@ import axios from "axios";
 import useRandom from "../hooks/useRandom";
 
 
-
-
 const FetchCall = () => {
 
     const [homoWords, setHomoWords] = useState([]);
-    const [button, setButton] = useState(null)
+    const [apiCall, setApiCall] = useState(null)
 
-    
     let randomWord = useRandom();
 
-    
-    
-    useEffect (() => {
-
-
-        const runIt =( ) => {
-            axios({
-          url: `https://api.datamuse.com/words`,
-          method: "GET",
-          dataResponse: "json",
-          params: {
-              rel_hom: randomWord,
-              max: 2,
-            },
-        }).then((response) => {
-            //NEXT STEP : ADD error handling for when only one word is returned - have the api run again until two words are returned
-            const similarSound = response.data; 
-            setHomoWords(similarSound);
-            console.log(similarSound);
-            console.log(button)
-            
-        })
-        }
+    const runIt =() => {
+        axios({
+        url: `https://api.datamuse.com/words`,
+        method: "GET",
+        dataResponse: "json",
+        params: {
+            rel_hom: randomWord,
+            max: 2,
+        },
+    }).then((response) => {
+        //NEXT STEP : ADD error handling for when only one word is returned - have the api run again until two words are returned
+        const similarSound = response.data; 
+        setHomoWords(similarSound);
+        console.log(similarSound);
         
-        runIt()
-    }, [button])
-    
-
-    
-    const handleClick = (e) => {
-
-        setButton(e.target.event)
-
+    })
     }
+
+    useEffect (() => {
+        runIt()
+    } ,[])
+    
+
+    const handleClick = () => {
+        runIt()
+    } 
     
     console.log(randomWord);
     console.log(homoWords);
     return (
         <div>
             <h2>Issa Test Yoo Reelaxxx</h2>
-
         {
             homoWords.map((word) => {
                 return (
-                    <h3 key={word.score}>{word.word}
-                    </h3>
+                    <div>
+                        <h3 key={word.score}>{word.word}
+                        </h3>
+
+                    </div>
                 )
             })
         }
-        <button onClick={handleClick}>Next</button>
-
+        <button onClick={ handleClick } > next</button>
         </div>
     )
 }
