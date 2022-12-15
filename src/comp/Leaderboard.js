@@ -1,11 +1,11 @@
 import app from '../firebase.js';
-import {push, ref, getDatabase, onValue, remove, } from 'firebase/database';
+import { push, ref, getDatabase, onValue, } from 'firebase/database';
 import { useEffect, useState } from 'react';
+import LeaderboardForm from './LeaderboardForm.js';
 
 const Leaderboard = () => {
 
   const [username, setUsername] = useState([]);
-  const [userInput, setUserInput] = useState([]);
 
   useEffect( () => {
     const database = getDatabase(app);
@@ -25,35 +25,9 @@ const Leaderboard = () => {
     })
   }, []);
 
-  const handleInputChange = (event) => {
-    setUserInput(event.target.value);
-  }
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    const database = getDatabase(app);
-    const dbRef = ref(database);
-
-    push(dbRef, userInput);
-    setUserInput('');
-
-  }
-
-  // DONT FORGET TO REMOVE THIS WHEN FINISHED !!!!
-
-  const handleRemove = (event) => {
-    event.preventDefault();
-
-    const database = getDatabase(app);
-    const dbRef = ref(database);
-
-    remove(dbRef);
-  }
  
   return(
     <div>
-      <h1>Leaderboard</h1>
         <ul>
           {
             username.map( (username) => {
@@ -65,13 +39,7 @@ const Leaderboard = () => {
             })
           }
         </ul>
-
-        <form action="submit">
-          <label htmlFor="newUsername">Please enter your name:</label>
-          <input type="text" id="newUsername" onChange={handleInputChange} value={userInput} />
-          <button onClick={handleSubmit}>Yeeeeeeah!</button>
-          <button onClick={handleRemove}>clear</button>
-        </form>
+      <LeaderboardForm />
     </div>
   )
 }
