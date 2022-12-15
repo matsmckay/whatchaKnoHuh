@@ -10,6 +10,8 @@ const FetchCall = () => {
     let randomWord = useRandom();
 
     console.log(randomWord);
+    
+    
 
 
     const runIt = () => { axios({
@@ -24,13 +26,20 @@ const FetchCall = () => {
         //NEXT STEP : ADD error handling for when only one word is returned - have the api run again until two words are returned
         
         const similarSound = response.data; 
+        console.log(response);
         setHomoWords(similarSound)
         console.log(similarSound);
+
+        const wordChoice = (similarSound[Math.floor(Math.random() * similarSound.length)]);
+        console.log(wordChoice.word);
     
     })
     }
 
 
+    if (homoWords.length === 1 || homoWords.length === 0) {
+        runIt()
+    };
     useEffect (() => {
         runIt()
     } ,[])
@@ -39,9 +48,6 @@ const FetchCall = () => {
         runIt()
     } 
 
-    if (homoWords.length === 1 || homoWords.length === 0) {
-        runIt()
-    };
     
     
     return (
