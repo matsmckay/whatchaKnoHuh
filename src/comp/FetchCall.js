@@ -1,52 +1,62 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import useRandom from "../hooks/useRandom";
+import WordDef from "./WordDef";
 
 const FetchCall = () => {
 
-    const [homoWords, setHomoWords] = useState([]);
-    // const [apiCall, setApiCall] = useState(null)
+    // const [homoWords, setHomoWords] = useState([]);
+    const [displayHomo, setDisplayHomo] = useState([]);
+    const [wordDef, setWordDef] = useState('');
+    const [triggerReRender, setTriggerReRender] = useState(false);
 
     let randomWord = useRandom();
-
-    console.log(randomWord);
-    
-    
-
-
-    const runIt = () => { axios({
-        url: `https://api.datamuse.com/words`,
-        method: "GET",
-        dataResponse: "json",
-        params: {
-            rel_hom: randomWord,
-            max: 2,
-        }
-    }).then((response) => {
-        //NEXT STEP : ADD error handling for when only one word is returned - have the api run again until two words are returned
-        
-        const similarSound = response.data; 
-        console.log(response);
-        setHomoWords(similarSound)
-        console.log(similarSound);
-
-        const wordChoice = (similarSound[Math.floor(Math.random() * similarSound.length)]);
-        console.log(wordChoice.word);
-    
-    })
-    }
-
-
-    if (homoWords.length === 1 || homoWords.length === 0) {
-        runIt()
-    };
     useEffect (() => {
-        runIt()
-    } ,[])
+    
+        console.log(randomWord);
+        
+        
+    
+    
+        axios({
+            url: `https://api.datamuse.com/words`,
+            method: "GET",
+            dataResponse: "json",
+            params: {
+                rel_hom: randomWord,
+                max: 2,
+            }
+        }).then((response) => {
+            //NEXT STEP : ADD error handling for when only one word is returned - have the api run again until two words are returned
+            
+            const similarSound = response.data; 
+            console.log(response);
+            // setHomoWords(similarSound)
+            console.log(similarSound);
+    
+            
+            
+        
+            if (similarSound.length === 1 ||similarSound.length === 0) {
+                setTriggerReRender(!triggerReRender)
+            }
+            else {
+                setDisplayHomo(similarSound)
+                const wordChoice = (similarSound[Math.floor(Math.random() * similarSound.length)]);
+                setWordDef(wordChoice.word);
+            }
+            
+        })
+        
+    
+    
+    } ,[triggerReRender])
+
     
     const handleClick = () => {
-        runIt()
-    } 
+        setTriggerReRender(!triggerReRender)
+    }  
+    
 
     
     
@@ -55,16 +65,17 @@ const FetchCall = () => {
             <h2>Issa Test Yoo Reelaxxx</h2>
 
            { 
-            homoWords.map((word) => {
+            displayHomo.map((word) => {
                 return (
                     <div>
                         <h3 key={word.score}>{word.word}</h3>
                     </div>
                 )
             }) 
-        }
-
-        <button onClick={ handleClick } > next</button>
+        }   
+            <WordDef wordDef ={wordDef}/>
+        
+            <button onClick={ handleClick } > next</button>
         </div>
     )
     }
