@@ -1,67 +1,69 @@
-
 import { useEffect, useState } from "react";
 import axios from "axios";
 import useRandom from "../hooks/useRandom";
 
-
 const FetchCall = () => {
 
     const [homoWords, setHomoWords] = useState([]);
-    const [apiCall, setApiCall] = useState(null)
+    // const [apiCall, setApiCall] = useState(null)
 
     let randomWord = useRandom();
 
-    const runIt =() => {
-        axios({
+    console.log(randomWord);
+
+
+    const runIt = () => { axios({
         url: `https://api.datamuse.com/words`,
         method: "GET",
         dataResponse: "json",
         params: {
             rel_hom: randomWord,
             max: 2,
-        },
+        }
     }).then((response) => {
         //NEXT STEP : ADD error handling for when only one word is returned - have the api run again until two words are returned
-        const similarSound = response.data; 
-        setHomoWords(similarSound);
-        console.log(similarSound);
         
+        const similarSound = response.data; 
+        setHomoWords(similarSound)
+        console.log(similarSound);
+    
     })
     }
+
 
     useEffect (() => {
         runIt()
     } ,[])
     
-
     const handleClick = () => {
         runIt()
     } 
+
+    if (homoWords.length === 1 || homoWords.length === 0) {
+        runIt()
+    };
     
-    console.log(randomWord);
-    console.log(homoWords);
+    
     return (
         <div>
             <h2>Issa Test Yoo Reelaxxx</h2>
-        {
+
+           { 
             homoWords.map((word) => {
                 return (
                     <div>
-                        <h3 key={word.score}>{word.word}
-                        </h3>
-
+                        <h3 key={word.score}>{word.word}</h3>
                     </div>
                 )
-            })
+            }) 
         }
+
         <button onClick={ handleClick } > next</button>
         </div>
     )
-}
-
+    }
 
 export default FetchCall;
-
 
 //SI CODE
 // Step 1: make a fetch call inside an useEffect to store data on page mount
