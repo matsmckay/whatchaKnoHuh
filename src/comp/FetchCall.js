@@ -49,7 +49,6 @@ const FetchCall = () => {
         })
         
     
-    
     } ,[triggerReRender])
 
     
@@ -68,12 +67,14 @@ const FetchCall = () => {
             displayHomo.map((word) => {
                 return (
                     <div>
-                        <h3 key={word.score}>{word.word}</h3>
+                        <div className="wrapper">
+                            <h3 key={word.score}>{word.word}</h3>
+                        </div>
                     </div>
                 )
             }) 
         }   
-            <WordDef wordDef ={wordDef}/>
+            {/* <WordDef wordDef ={wordDef}/> */}
         
             <button onClick={ handleClick } > next</button>
         </div>
