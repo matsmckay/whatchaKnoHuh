@@ -9,7 +9,7 @@ import Tyler from './Routes/Tyler.js';
 import ErrorPage from './Routes/ErrorPage.js';
 import FetchCall from './comp/FetchCall.js';
 import WordDef from './comp/WordDef.js';
-
+import './App.css'
 
 function App() {
   return (
