@@ -2,7 +2,7 @@ import app from '../firebase.js';
 import {push, ref, getDatabase, remove, } from 'firebase/database';
 import { useState } from 'react';
 
-const LeaderboardForm = () => {
+const LeaderBoardForm = () => {
 
   const [userInput, setUserInput] = useState([]);
 
@@ -44,7 +44,7 @@ const LeaderboardForm = () => {
   )
 }
 
-export default LeaderboardForm;
+export default LeaderBoardForm;
 
 
 // Cant code until i fix this merge issue tmr so heres some pseudo

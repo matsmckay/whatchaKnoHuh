@@ -5,81 +5,89 @@ import WordDef from "./WordDef";
 
 const FetchCall = () => {
 
-    const [displayHomo, setDisplayHomo] = useState([]);
-    const [wordDef, setWordDef] = useState('');
-    const [triggerReRender, setTriggerReRender] = useState(false);
-    const [oneWord, setOneWord] = useState('');
 
+    //state below displays array of homo words to page
+    const [displayHomo, setDisplayHomo] = useState([]);
+
+    //stores def of one of the words 
+    const [wordDef, setWordDef] = useState('');
+
+    //this state is for the button to trigger rerender 
+    const [triggerReRender, setTriggerReRender] = useState(false);
+    // const [oneWord, setOneWord] = useState('');
+
+
+
+    //this var selects random word from the hook
     let randomWord = useRandom();
-    useEffect (() => {
-            
-        console.log(randomWord);
-        
-        
-    
-    
+    //  console.log(randomWord);
+
+     
+     
+     useEffect (() => {
+
+        //locking in the random word selected
+        let randomResult = randomWord
+
+
         axios({
             url: `https://api.datamuse.com/words`,
             method: "GET",
             dataResponse: "json",
             params: {
-                rel_hom: randomWord,
+                rel_hom: randomResult,
                 max: 1,
             }
         }).then((response) => {
-            //NEXT STEP : ADD error handling for when only one word is returned - have the api run again until two words are returned
-            
+          
             const similarSound = response.data; 
-            console.log(response);
-            // setHomoWords(similarSound)
-            console.log(similarSound);
-            
-        
+
+
+            //conditional to make sure the data we get back is what we want 
             if (similarSound.numSyllables >= 2 || similarSound.length === 0 ) {
                 setTriggerReRender(!triggerReRender)
             }
             else {
-                setDisplayHomo(similarSound)
-                // to fix this wordchoice, gonna have to make an array to store oneWord and similiarSound and then run this function on that array
-                const wordChoice = (similarSound[Math.floor(Math.random() * similarSound.length)]);
-                setWordDef(wordChoice.word);
-                setOneWord(randomWord);
-                console.log(wordDef);
-                console.log(oneWord);
+                // if the data is good we store it in vars below 
+                let apiWord = similarSound[0].word
+                let ourWord = randomResult
+                
+                //put the apiword & ourword in an array 
+                let wordOptions = [apiWord, ourWord]
+                console.log(wordOptions);
+
+                // *this is for word def comp* select random word from array above
+                const wordRandomizer = wordOptions[Math.floor(Math.random() * wordOptions.length)]
+
+                console.log(wordRandomizer);
+
+                //set state to wordOptions array to display 
+                setDisplayHomo(wordOptions)
+                console.log(displayHomo);
+              
             }
-            
         })
-        
-    
     } ,[triggerReRender])
 
-    console.log(randomWord)
+
+    // console.log(randomWord)
     
     const handleClick = () => {
         setTriggerReRender(!triggerReRender)
     }  
     
-
-    
-    
-    return (
+        console.log(displayHomo);        
+        return (
         <div>
             <h2>Issa Test Yoo Reelaxxx</h2>
 
-           { 
-            displayHomo.map((word) => {
-                return (
-                    <div>
-                        <div className="wrapper">
-                            <h3 key={word.score}>{word.word}</h3>
-                        </div>
-                    </div>
-                )
-            }) 
-            
-        }   
-            <WordDef wordDef ={wordDef}/>
-            <h3>{oneWord}</h3>
+            {
+                <div>
+                    <button>{ displayHomo[0] }</button>
+                    <button>{ displayHomo[1] }</button>
+                </div>
+            }
+          
             <button onClick={ handleClick } > next</button>
         </div>
     )

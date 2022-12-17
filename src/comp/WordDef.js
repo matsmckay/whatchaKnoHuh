@@ -4,11 +4,11 @@ import { useEffect, useState } from "react"
 
 const WordDef = () => {
 
-  // const [responseDef, setResponseDef] = useState('');
+  const [responseDef, setResponseDef] = useState('');
 
     useEffect(() => {
       let word = 'apple'
-      console.log(word)
+      // console.log(word)
       axios({
           url: `https://api.wordnik.com/v4/word.json/${word}/definitions`,
           method: "GET",
@@ -20,11 +20,11 @@ const WordDef = () => {
           }
       }).then((response) => {
           //NEXT STEP : ADD error handling for when only one word is returned - have the api run again until two words are returned
-          console.log(response.data)
+          // console.log(response.data)
           // setResponseDef(response.data[0].text)
           let definition = response.data
           definition.filter((def) => {
-            console.log(def.text)
+            // console.log(def.text)
             return def.text
           })
           setResponseDef(definition);

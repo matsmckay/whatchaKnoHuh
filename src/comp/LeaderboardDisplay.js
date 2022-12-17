@@ -1,7 +1,7 @@
 import app from '../firebase.js';
 import { push, ref, getDatabase, onValue, } from 'firebase/database';
 import { useEffect, useState } from 'react';
-import LeaderboardForm from './LeaderboardForm.js';
+import LeaderBoardForm from './LeaderBoardForm.js';
 
 const LeaderboardDisplay = () => {
 
@@ -39,7 +39,7 @@ const LeaderboardDisplay = () => {
             })
           }
         </ul>
-      <LeaderboardForm />
+      <LeaderBoardForm />
     </div>
   )
 }
