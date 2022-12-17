@@ -32,6 +32,14 @@ const LeaderboardForm = () => {
     remove(dbRef);
   }
 
+  // This handlePointCounter will be added to the logic for which word is true / false, just writing it here to cause im silly 
+
+  // const handlePointCounter = (event) => {
+  //   event.preventDefault();
+
+
+  // }
+
   return(
     <div>
         <form action="submit">
@@ -39,6 +47,7 @@ const LeaderboardForm = () => {
           <input type="text" id="newUsername" onChange={handleInputChange} value={userInput} />
           <button onClick={handleSubmit}>Yeeeeeeah!</button>
           <button onClick={handleRemove}>clear</button>
+          {/* <button onClick={handlePointCounter}>Right Answer</button> */}
         </form>
     </div>
   )
@@ -47,5 +56,6 @@ const LeaderboardForm = () => {
 export default LeaderboardForm;
 
 
-// Cant code until i fix this merge issue tmr so heres some pseudo
-// change handleSubmit to use the update function import from firebase instead of push. That way itll update the value of a node th
+// score counter
+// add a function / funciton def to the onClick that is attacted to the button that the user selects when decieding which word is correct
+// 

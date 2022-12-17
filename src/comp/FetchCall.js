@@ -14,7 +14,8 @@ const FetchCall = () => {
     useEffect (() => {
     
         console.log(randomWord);
-        
+        setOneWord(randomWord);
+        console.log(oneWord);
         
     
     
@@ -30,7 +31,7 @@ const FetchCall = () => {
             //NEXT STEP : ADD error handling for when only one word is returned - have the api run again until two words are returned
             
             const similarSound = response.data; 
-            console.log(response);
+            // console.log(response);
             // setHomoWords(similarSound)
             console.log(similarSound);
             
@@ -39,13 +40,18 @@ const FetchCall = () => {
                 setTriggerReRender(!triggerReRender)
             }
             else {
-                setDisplayHomo(similarSound)
+                setDisplayHomo(similarSound);
+                
+
+                const twoWords = [similarSound, oneWord];
+                console.log(twoWords);
+
+                
+
                 // to fix this wordchoice, gonna have to make an array to store oneWord and similiarSound and then run this function on that array
-                const wordChoice = (similarSound[Math.floor(Math.random() * similarSound.length)]);
-                setWordDef(wordChoice.word);
-                setOneWord(randomWord);
-                console.log(wordDef);
-                console.log(oneWord);
+                // const wordChoice = (similarSound[Math.floor(Math.random() * similarSound.length)]);
+                // setWordDef(wordChoice.word);
+                // console.log(wordDef);
             }
             
         })
@@ -54,7 +60,7 @@ const FetchCall = () => {
     
     } ,[triggerReRender])
 
-    console.log(randomWord)
+    // console.log(randomWord)
     
     const handleClick = () => {
         setTriggerReRender(!triggerReRender)
@@ -78,7 +84,7 @@ const FetchCall = () => {
             }) 
             
         }   
-            <WordDef wordDef ={wordDef}/>
+            {/* <WordDef wordDef ={wordDef}/> */}
             <h3>{oneWord}</h3>
             <button onClick={ handleClick } > next</button>
         </div>
