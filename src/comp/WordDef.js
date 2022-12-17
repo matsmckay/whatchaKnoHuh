@@ -2,12 +2,12 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 
 
-const WordDef = () => {
+const WordDef = ({wordDef}) => {
 
   const [responseDef, setResponseDef] = useState('');
 
     useEffect(() => {
-      let word = 'apple'
+      let word = wordDef
       console.log(word)
       axios({
           url: `https://api.wordnik.com/v4/word.json/${word}/definitions`,

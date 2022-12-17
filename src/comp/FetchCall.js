@@ -16,10 +16,7 @@ const FetchCall = () => {
         console.log(randomWord);
         let randomResult = randomWord
 
-        console.log(randomResult);
-        // setOneWord(randomResult);
-        // console.log(oneWord);
-        
+        // console.log(randomResult);
     
     
         axios({
@@ -36,7 +33,6 @@ const FetchCall = () => {
             // console.log(response.data[0])
             const similarSound = response.data; 
             // console.log(response);
-            // setHomoWords(similarSound)
             console.log(similarSound);
             
         
@@ -47,13 +43,16 @@ const FetchCall = () => {
 
                 const twoWords = [similarSound[0].word, randomResult];
                 console.log(twoWords);
-
+                
                 const wordChoice = (twoWords[Math.floor(Math.random() * twoWords.length)]);
                 console.log(wordChoice);
-
-                setDisplayHomo(twoWords);
-                // setWordDef(wordChoice);
+                
+                setWordDef(wordChoice);
                 // console.log(wordDef);
+                
+                setDisplayHomo(twoWords);
+                console.log(twoWords);
+                
             }
             
         })
@@ -70,6 +69,7 @@ const FetchCall = () => {
     
 
     
+    console.log(wordDef);
     
     return (
         <div>
@@ -77,7 +77,7 @@ const FetchCall = () => {
             <button>{displayHomo[0]}</button>
             <button>{displayHomo[1]}</button>
             {/* <WordDef wordDef ={wordDef}/> */}
-            <button onClick={ handleClick } > next</button>
+            <button onClick={ handleClick } >next</button>
         </div>
     )
     }
