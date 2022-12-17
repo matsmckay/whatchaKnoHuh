@@ -3,7 +3,7 @@ import { push, ref, getDatabase, onValue, } from 'firebase/database';
 import { useEffect, useState } from 'react';
 import LeaderboardForm from './LeaderboardForm.js';
 
-const Leaderboard = () => {
+const LeaderboardDisplay = () => {
 
   const [username, setUsername] = useState([]);
 
@@ -44,5 +44,5 @@ const Leaderboard = () => {
   )
 }
 
-export default Leaderboard;
+export default LeaderboardDisplay;
 

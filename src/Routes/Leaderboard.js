@@ -1,4 +1,5 @@
 import { Outlet } from 'react-router-dom'
+import LeaderboardDisplay from '../comp/LeaderboardDisplay';
 
 const Leaderboard = () => {
     return (
@@ -6,11 +7,7 @@ const Leaderboard = () => {
             <h2>The best of the best!</h2>
             <Outlet />
             <div className="topScores">
-                <ul className="members">
-                    <li>best</li>
-                    <li>next best</li>
-                    <li>next next best</li>
-                </ul>
+                <LeaderboardDisplay />
             </div>
         </div>
     )
