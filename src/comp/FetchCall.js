@@ -12,10 +12,13 @@ const FetchCall = () => {
 
     let randomWord = useRandom();
     useEffect (() => {
-    
+        
         console.log(randomWord);
-        setOneWord(randomWord);
-        console.log(oneWord);
+        let randomResult = randomWord
+
+        console.log(randomResult);
+        // setOneWord(randomResult);
+        // console.log(oneWord);
         
     
     
@@ -30,6 +33,7 @@ const FetchCall = () => {
         }).then((response) => {
             //NEXT STEP : ADD error handling for when only one word is returned - have the api run again until two words are returned
             
+            // console.log(response.data[0])
             const similarSound = response.data; 
             // console.log(response);
             // setHomoWords(similarSound)
@@ -40,17 +44,15 @@ const FetchCall = () => {
                 setTriggerReRender(!triggerReRender)
             }
             else {
-                setDisplayHomo(similarSound);
-                
 
-                const twoWords = [similarSound, oneWord];
+                const twoWords = [similarSound[0].word, randomResult];
                 console.log(twoWords);
 
-                
+                const wordChoice = (twoWords[Math.floor(Math.random() * twoWords.length)]);
+                console.log(wordChoice);
 
-                // to fix this wordchoice, gonna have to make an array to store oneWord and similiarSound and then run this function on that array
-                // const wordChoice = (similarSound[Math.floor(Math.random() * similarSound.length)]);
-                // setWordDef(wordChoice.word);
+                setDisplayHomo(twoWords);
+                // setWordDef(wordChoice);
                 // console.log(wordDef);
             }
             
@@ -72,20 +74,9 @@ const FetchCall = () => {
     return (
         <div>
             <h2>Issa Test Yoo Reelaxxx</h2>
-
-           { 
-            displayHomo.map((word) => {
-                return (
-                    <div>
-                        <h3 key={word.score}>{word.word}</h3>
-                        
-                    </div>
-                )
-            }) 
-            
-        }   
+            <button>{displayHomo[0]}</button>
+            <button>{displayHomo[1]}</button>
             {/* <WordDef wordDef ={wordDef}/> */}
-            <h3>{oneWord}</h3>
             <button onClick={ handleClick } > next</button>
         </div>
     )
