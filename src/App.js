@@ -1,3 +1,5 @@
+import './App.css'
+
 import { Link, Routes, Route, } from 'react-router-dom';
 import Home from './Routes/Home.js';
 import Leaderboard from './Routes/Leaderboard.js';
