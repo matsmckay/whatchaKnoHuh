@@ -7,17 +7,17 @@ const LeaderboardDisplay = () => {
 
   const [username, setUsername] = useState([]);
 
-  useEffect( () => {
+  useEffect(() => {
     const database = getDatabase(app);
     const dbRef = ref(database);
 
     onValue(dbRef, (response) => {
-
+      console.log(response.val())
       const updatedDbInfo = [];
       const data = response.val();
 
-      for (let key in data){
-        updatedDbInfo.push({key:key, name:data[key]});
+      for (let key in data) {
+        updatedDbInfo.push({ key: key, name: data[key] });
       }
 
       setUsername(updatedDbInfo);
@@ -25,20 +25,20 @@ const LeaderboardDisplay = () => {
     })
   }, []);
 
- 
-  return(
+
+  return (
     <div>
-        <ul>
-          {
-            username.map( (username) => {
-              return(
-                <li key={username.key}>
-                  <p>{username.name}</p>
-                </li>
-              )
-            })
-          }
-        </ul>
+      <ul>
+        {
+          username.map((username) => {
+            return (
+              <li key={username.key}>
+                <p>{username.name}</p>
+              </li>
+            )
+          })
+        }
+      </ul>
       <LeaderBoardForm />
     </div>
   )

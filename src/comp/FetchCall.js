@@ -41,7 +41,7 @@ const FetchCall = () => {
         }).then((response) => {
           
             const similarSound = response.data; 
-
+            console.log(response.data)
 
             //conditional to make sure the data we get back is what we want 
             if (similarSound.numSyllables >= 2 || similarSound.length === 0 ) {
@@ -59,10 +59,10 @@ const FetchCall = () => {
                 // *this is for word def comp* select random word from array above
                 const wordRandomizer = wordOptions[Math.floor(Math.random() * wordOptions.length)]
 
+                setWordDef(wordRandomizer);
                 console.log(wordRandomizer);
-
                 //set state to wordOptions array to display 
-                setDisplayHomo(wordOptions)
+                setDisplayHomo(wordOptions);
                 console.log(displayHomo);
               
             }
@@ -76,7 +76,8 @@ const FetchCall = () => {
         setTriggerReRender(!triggerReRender)
     }  
     
-        console.log(displayHomo);        
+        console.log(displayHomo); 
+        console.log(wordDef);       
         return (
         <div>
             <h2>Issa Test Yoo Reelaxxx</h2>
@@ -85,6 +86,7 @@ const FetchCall = () => {
                 <div>
                     <button>{ displayHomo[0] }</button>
                     <button>{ displayHomo[1] }</button>
+                    <WordDef  wordDef = {wordDef}/>
                 </div>
             }
           
