@@ -1,7 +1,7 @@
 import app from '../firebase.js';
-import { push, ref, getDatabase, onValue, } from 'firebase/database';
+import { push, ref, getDatabase, onValue, get} from 'firebase/database';
 import { useEffect, useState } from 'react';
-import LeaderboardForm from './LeaderboardForm.js';
+import LeaderboardForm from './LeaderBoardForm.js';
 
 const LeaderboardDisplay = () => {
 
@@ -9,23 +9,28 @@ const LeaderboardDisplay = () => {
 
   useEffect( () => {
     const database = getDatabase(app);
-    const dbRef = ref(database);
+    const dbRef = ref(database, `/user`);
+    console.log(dbRef);
 
     onValue(dbRef, (response) => {
+   
+      const data = response.val();
+      
+      console.log(data);
 
       const updatedDbInfo = [];
-      const data = response.val();
 
       for (let key in data){
-        updatedDbInfo.push({key:key, name:data[key]});
-      }
-
-      setUsername(updatedDbInfo);
+        console.log(data[key]);
+        updatedDbInfo.push(data[key]);
+        setUsername(updatedDbInfo);
+      } 
 
     })
+
   }, []);
 
- 
+ console.log(username);
   return(
     <div>
         <ul>
@@ -34,12 +39,13 @@ const LeaderboardDisplay = () => {
               return(
                 <li key={username.key}>
                   <p>{username.name}</p>
+                  <p>{username.points}</p>
                 </li>
               )
             })
           }
         </ul>
-      <LeaderboardForm />
+      <LeaderboardForm  />
     </div>
   )
 }

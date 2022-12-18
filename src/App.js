@@ -1,3 +1,5 @@
+import './App.css'
+
 import { Link, Routes, Route, } from 'react-router-dom';
 import Home from './Routes/Home.js';
 import Leaderboard from './Routes/Leaderboard.js';
@@ -7,9 +9,10 @@ import Daman from './Routes/Daman.js';
 import Radojko from './Routes/Radojko.js';
 import Tyler from './Routes/Tyler.js';
 import ErrorPage from './Routes/ErrorPage.js';
-import FetchCall from './comp/FetchCall.js';
-import WordDef from './comp/WordDef.js';
-import './App.css'
+
+
+
+
 
 function App() {
   return (

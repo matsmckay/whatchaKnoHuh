@@ -66,17 +66,54 @@ const FetchCall = () => {
     const handleClick = () => {
         setTriggerReRender(!triggerReRender)
     }  
-    
+
+
+        // ******************************************************************
+
+
+    //     const [responseDef, setResponseDef] = useState('');
+
+    //         useEffect(() => {
+    //   let word = wordDef
+    //   console.log(word)
+    //   axios({
+    //       url: `https://api.wordnik.com/v4/word.json/${word}/definitions`,
+    //       method: "GET",
+    //       dataResponse: "json",
+    //       params: {
+    //           word: word,
+    //           limit: 3,
+    //           api_key: '27lonz8iuunssx6o3uadbmcjgcyja363kgwsvbkxoqdada30f'
+    //       }
+    //   }).then((response) => {
+    //       //NEXT STEP : ADD error handling for when only one word is returned - have the api run again until two words are returned
+    //       console.log(response.data)
+          
+    //       let definition = response.data
+    //       definition.find((defText) => {
+    //         setResponseDef(defText.text);
+    //         return defText.text
+    //       })
+    //       // setResponseDef(definition);
+          
+          
+    //   })
+
+    // },[!triggerReRender])
+
 
     
+
+    // ***********************************************************************
     console.log(wordDef);
     
     return (
         <div>
             <h2>Issa Test Yoo Reelaxxx</h2>
+            {/* <p>{responseDef}</p> */}
             <button>{displayHomo[0]}</button>
             <button>{displayHomo[1]}</button>
-            {/* <WordDef wordDef ={wordDef}/> */}
+            <WordDef wordDef ={wordDef} triggerReRender={triggerReRender}/>
             <button onClick={ handleClick } >next</button>
         </div>
     )

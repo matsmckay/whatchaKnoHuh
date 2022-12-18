@@ -13,12 +13,19 @@ const LeaderboardForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    // const results = 50
+      const newUser = {
+        name: userInput,
+        points: 0
+      }
+
     const database = getDatabase(app);
     const dbRef = ref(database);
+    const usersNodeRef = ref(database, `/user`)
 
-    push(dbRef, userInput);
+    push(usersNodeRef,newUser);
     setUserInput('');
-
+//  console.log(results)
   }
 
   // DONT FORGET TO REMOVE THIS WHEN FINISHED !!!!
@@ -27,9 +34,9 @@ const LeaderboardForm = () => {
     event.preventDefault();
 
     const database = getDatabase(app);
-    const dbRef = ref(database);
-
-    remove(dbRef);
+    const dbRef = ref(database, `/user`);
+    console.log(dbRef);
+    remove(database, `/user`);
   }
 
   // This handlePointCounter will be added to the logic for which word is true / false, just writing it here to cause im silly 
@@ -42,6 +49,7 @@ const LeaderboardForm = () => {
 
   return(
     <div>
+      <p>{userInput}</p>
         <form action="submit">
           <label htmlFor="newUsername">Please enter your name:</label>
           <input type="text" id="newUsername" onChange={handleInputChange} value={userInput} />
