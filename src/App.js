@@ -1,4 +1,5 @@
 import './App.css'
+import './HomeStyles.css'
 
 import { Link, Routes, Route, } from 'react-router-dom';
 import GamePage from './Routes/GamePage.js';
@@ -9,6 +10,7 @@ import Daman from './Routes/Daman.js';
 import Radojko from './Routes/Radojko.js';
 import Tyler from './Routes/Tyler.js';
 import ErrorPage from './Routes/ErrorPage.js';
+import Home from './Routes/Home';
 
 
 
@@ -16,26 +18,31 @@ import ErrorPage from './Routes/ErrorPage.js';
 
 function App() {
   return (
-    <div>
-      <h1>Da **** do you know??</h1>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/leaderboard">Leaderboard</Link>
-          </li>
-          <li>
-            <Link to="/credits">Credits</Link>
-          </li>
-        </ul>
-      </nav>
-
-
-      <button>
-          <Link to="/GamePage">Play Now!</Link>
-      </button>
+    <div className='homePage'>
+      <div className='wrapper'>
+        <header className='header'>
+          <h1>What do YOU no?</h1>
+            <nav>
+              <ul className='navUl'>
+                <li>
+                  <Link to="/leaderboard">Leaderboard</Link>
+                </li>
+                <li>
+                  <Link to="/credits">Credits</Link>
+                </li>
+              </ul>
+            </nav>
+        </header>
+      </div>
+      <div className='wrapper'>
+      </div>
+      
 
 
       <Routes>
+      <Route path="/" element={<Home />} />
+
+
       <Route path="/GamePage" element={<GamePage />} />
         <Route path="/leaderboard" element={<Leaderboard />}></Route>
 
