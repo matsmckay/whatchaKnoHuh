@@ -1,0 +1,41 @@
+body {
+    background-color: whitesmoke;
+}
+
+.header {
+    height: 10vh;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+*{
+    border: 1px solid red
+}
+nav {
+    width: 40%;
+}
+.navUl {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+
+}
+h1 {
+    width: 40%;
+    text-align: left;
+}
+
+.howToPlay {
+    height: 80vh;
+    text-align: center;
+}
+.howToPlay div {
+    margin-top: 180px;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+p {
+    padding: 20px 30px;
+}
+
+
