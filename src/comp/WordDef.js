@@ -19,7 +19,7 @@ const WordDef = ({ wordDef, triggerReRender }) => {
       params: {
         word: word,
         limit: 5,
-        api_key: keyMatt
+        api_key: keyRadojko
       }
     }).then((response) => {
       //NEXT STEP : ADD error handling for when only one word is returned - have the api run again until two words are returned
