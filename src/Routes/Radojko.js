@@ -1,6 +1,13 @@
 const Radojko = () => {
     return (
-        <p>Email: <a href="mailto:rr@email.com">rr@email.com</a></p>
+        <div>
+            <div className="imageContainer">
+
+                <img className="creditImg" src="https://placekitten.com/200/200" alt="" />
+            </div>
+
+            <p><a className="email" href="mailto:radulovicradojko@gmail.com">Email Radojko!</a></p>
+        </div>
     )
 }
 

@@ -22,28 +22,28 @@ function App() {
       <div className='wrapper'>
         <header className='header'>
           <h1>What do YOU no?</h1>
-            <nav>
-              <ul className='navUl'>
-                <li>
-                  <Link to="/leaderboard">Leaderboard</Link>
-                </li>
-                <li>
-                  <Link to="/credits">Credits</Link>
-                </li>
-              </ul>
-            </nav>
+          <nav>
+            <ul className='navUl'>
+              <li>
+                <Link to="/leaderboard">Leaderboard</Link>
+              </li>
+              <li>
+                <Link to="/credits">Credits</Link>
+              </li>
+            </ul>
+          </nav>
         </header>
       </div>
       <div className='wrapper'>
       </div>
-      
+
 
 
       <Routes>
-      <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home />} />
 
 
-      <Route path="/GamePage" element={<GamePage />} />
+        <Route path="/GamePage" element={<GamePage />} />
         <Route path="/leaderboard" element={<Leaderboard />}></Route>
 
         <Route path="/credits/" element={<Credits />} >
@@ -52,7 +52,7 @@ function App() {
           <Route path="tyler" element={<Tyler />} />
           <Route path="matt" element={<Matt />} />
         </Route>
-       
+
 
       </Routes>
     </div>

@@ -1,7 +1,12 @@
 const Matt = () => {
     return (
-        <div>
-            <p className="mattEmail">Email: <a href="mailto:matthewmckay@gmail.com">matthewmckay@gmail.com</a></p>
+        <div className="">
+            <div className="imageContainer">
+
+                <img className="creditImg" src="https://placeimg.com/200/200" alt="" />
+            </div>
+
+            <p className="mattEmail"><a className="email" href="mailto:matthewmckay@gmail.com">Email Matt!</a></p>
         </div>
     )
 }

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import useRandom from "../hooks/useRandom";
 import WordDef from "./WordDef";
+import TrueOrFalseButton from "./TrueOrFalseButton";
 
 const FetchCall = () => {
 
@@ -20,6 +21,7 @@ const FetchCall = () => {
 
     //this var selects random word from the hook
     let randomWord = useRandom();
+
     useEffect (() => {
         
         console.log(randomWord);
@@ -66,11 +68,6 @@ const FetchCall = () => {
         })
     } ,[triggerReRender])
 
-    // console.log(randomWord)
-    
-    const handleClick = () => {
-        setTriggerReRender(!triggerReRender)
-    }  
 
     console.log(wordDef);
     
@@ -78,10 +75,13 @@ const FetchCall = () => {
         <div>
             <h2>Issa Test Yoo Reelaxxx</h2>
             {/* <p>{responseDef}</p> */}
-            <button>{displayHomo[0]}</button>
-            <button>{displayHomo[1]}</button>
             <WordDef wordDef ={wordDef} triggerReRender={triggerReRender}/>
-            <button onClick={ handleClick } >next</button>
+            <TrueOrFalseButton
+             triggerReRender={triggerReRender}
+             setTriggerReRender={setTriggerReRender}
+             displayHomo={displayHomo}
+             wordDef={wordDef}             
+             />
         </div>
     )
     }
