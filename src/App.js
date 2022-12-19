@@ -31,12 +31,12 @@ function App() {
 
 
       <button>
-          <Link to="/GamePage">Play Now!</Link>
+        <Link to="/GamePage">Play Now!</Link>
       </button>
 
 
       <Routes>
-      <Route path="/GamePage" element={<GamePage />} />
+        <Route path="/GamePage" element={<GamePage />} />
         <Route path="/leaderboard" element={<Leaderboard />}></Route>
 
         <Route path="/credits/" element={<Credits />} >
@@ -45,7 +45,7 @@ function App() {
           <Route path="tyler" element={<Tyler />} />
           <Route path="matt" element={<Matt />} />
         </Route>
-       
+
 
       </Routes>
     </div>

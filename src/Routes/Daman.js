@@ -1,6 +1,13 @@
 const Daman = () => {
     return (
-        <p>Email: <a href="mailto:daman@email.com">daman@email.com</a></p>
+        <div>
+            <div className="imageContainer">
+
+                <img className="creditImg" src="https://placebear.com/200/200" alt="" />
+            </div>
+
+            <p><a className="email" href="mailto:damanmatharoo4@gmail.com">Email Daman!</a></p>
+        </div>
     )
 }
 

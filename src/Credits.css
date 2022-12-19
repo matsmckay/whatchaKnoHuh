@@ -1,0 +1,39 @@
+.creditsDiv {
+    /* background: #cfff31; */
+    color: #cfff31;
+    color: #6056f9;
+    background: #e3f4f3
+}
+
+.creditsTeamUl {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.imageContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.creditsTeamLi {
+    display: flex;
+
+}
+
+.email {
+    color: #6056f9;
+    ;
+    text-decoration: none;
+}
+
+.team {
+    color: #6056f9;
+    ;
+    text-decoration: none;
+}
+
+/* .creditImg {
+    display: block;
+
+} */
