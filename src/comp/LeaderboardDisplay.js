@@ -22,7 +22,7 @@ const LeaderboardDisplay = () => {
 
       for (let key in data) {
         console.log(data[key]);
-        updatedDbInfo.push({ key: key, name: data[key] });
+        updatedDbInfo.push(data[key]);
         setUsername(updatedDbInfo);
       }
 
