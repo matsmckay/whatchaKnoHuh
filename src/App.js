@@ -1,7 +1,7 @@
 import './App.css'
 
 import { Link, Routes, Route, } from 'react-router-dom';
-import Home from './Routes/Home.js';
+import GamePage from './Routes/GamePage.js';
 import Leaderboard from './Routes/Leaderboard.js';
 import Credits from './Routes/Credits.js';
 import Matt from './Routes/Matt.js';
@@ -21,9 +21,6 @@ function App() {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
             <Link to="/leaderboard">Leaderboard</Link>
           </li>
           <li>
@@ -33,9 +30,13 @@ function App() {
       </nav>
 
 
-      <Routes>
-        <Route path="/" element={<Home />} />
+      <button>
+          <Link to="/GamePage">Play Now!</Link>
+      </button>
 
+
+      <Routes>
+      <Route path="/GamePage" element={<GamePage />} />
         <Route path="/leaderboard" element={<Leaderboard />}></Route>
 
         <Route path="/credits/" element={<Credits />} >
@@ -44,7 +45,7 @@ function App() {
           <Route path="tyler" element={<Tyler />} />
           <Route path="matt" element={<Matt />} />
         </Route>
-        <Route path="*" element={<ErrorPage />} />
+       
 
       </Routes>
     </div>
