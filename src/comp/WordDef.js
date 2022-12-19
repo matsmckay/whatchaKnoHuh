@@ -1,44 +1,48 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import FetchCall from "./FetchCall";
 
 
-const WordDef = (props) => {
+
+const WordDef = ({ wordDef, triggerReRender }) => {
+  const keyRadojko = 'cb0kpdqhzyzmlou550ldukoadiyayyvp5607r0qnhpxxo85fb'
+  const keyMatt = '27lonz8iuunssx6o3uadbmcjgcyja363kgwsvbkxoqdada30f'
 
   const [responseDef, setResponseDef] = useState('');
 
   useEffect(() => {
-    let word = 'apple'
-    // console.log(word)
+    let word = wordDef
+    console.log(word)
     axios({
       url: `https://api.wordnik.com/v4/word.json/${word}/definitions`,
       method: "GET",
       dataResponse: "json",
       params: {
         word: word,
-        limit: 3,
-        api_key: '27lonz8iuunssx6o3uadbmcjgcyja363kgwsvbkxoqdada30f'
+        limit: 5,
+        api_key: keyMatt
       }
     }).then((response) => {
       //NEXT STEP : ADD error handling for when only one word is returned - have the api run again until two words are returned
-      // console.log(response.data)
-      // setResponseDef(response.data[0].text)
+      console.log(response.data)
+
       let definition = response.data
-      definition.filter((def) => {
-        // console.log(def.text)
-        return def.text
+      definition.find((defText) => {
+        setResponseDef(defText.text);
+        return defText.text
       })
-      setResponseDef(definition);
 
     })
 
-  }, [])
 
-  // return(
-  //   <div>
-  //     <p>{responseDef}</p>
-  //   </div>
-  // )
+  }, [wordDef])
+
+
+
+  return (
+    <div>
+      <p>{responseDef}</p>
+    </div>
+  )
 }
 
 export default WordDef;

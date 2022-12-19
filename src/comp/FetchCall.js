@@ -20,16 +20,14 @@ const FetchCall = () => {
 
     //this var selects random word from the hook
     let randomWord = useRandom();
-    //  console.log(randomWord);
-
-     
-     
-     useEffect (() => {
-
-        //locking in the random word selected
+    useEffect (() => {
+        
+        console.log(randomWord);
         let randomResult = randomWord
 
-
+        // console.log(randomResult);
+    
+    
         axios({
             url: `https://api.datamuse.com/words`,
             method: "GET",
@@ -39,58 +37,51 @@ const FetchCall = () => {
                 max: 1,
             }
         }).then((response) => {
-          
+            //NEXT STEP : ADD error handling for when only one word is returned - have the api run again until two words are returned
+            
+            // console.log(response.data[0])
             const similarSound = response.data; 
-            console.log(response.data)
-
-            //conditional to make sure the data we get back is what we want 
+            // console.log(response);
+            console.log(similarSound);
+            
+        
             if (similarSound.numSyllables >= 2 || similarSound.length === 0 ) {
                 setTriggerReRender(!triggerReRender)
             }
             else {
-                // if the data is good we store it in vars below 
-                let apiWord = similarSound[0].word
-                let ourWord = randomResult
+
+                const twoWords = [similarSound[0].word, randomResult];
+                console.log(twoWords);
                 
-                //put the apiword & ourword in an array 
-                let wordOptions = [apiWord, ourWord]
-                console.log(wordOptions);
-
-                // *this is for word def comp* select random word from array above
-                const wordRandomizer = wordOptions[Math.floor(Math.random() * wordOptions.length)]
-
-                setWordDef(wordRandomizer);
-                console.log(wordRandomizer);
-                //set state to wordOptions array to display 
-                setDisplayHomo(wordOptions);
-                console.log(displayHomo);
-              
+                const wordChoice = (twoWords[Math.floor(Math.random() * twoWords.length)]);
+                console.log(wordChoice);
+                
+                setWordDef(wordChoice);
+                // console.log(wordDef);
+                
+                setDisplayHomo(twoWords);
+                console.log(twoWords);
+                
             }
         })
     } ,[triggerReRender])
-
 
     // console.log(randomWord)
     
     const handleClick = () => {
         setTriggerReRender(!triggerReRender)
     }  
+
+    console.log(wordDef);
     
-        console.log(displayHomo); 
-        console.log(wordDef);       
-        return (
+    return (
         <div>
             <h2>Issa Test Yoo Reelaxxx</h2>
-
-            {
-                <div>
-                    <button>{ displayHomo[0] }</button>
-                    <button>{ displayHomo[1] }</button>
-                    <WordDef  wordDef = {wordDef}/>
-                </div>
-            }
-          
-            <button onClick={ handleClick } > next</button>
+            {/* <p>{responseDef}</p> */}
+            <button>{displayHomo[0]}</button>
+            <button>{displayHomo[1]}</button>
+            <WordDef wordDef ={wordDef} triggerReRender={triggerReRender}/>
+            <button onClick={ handleClick } >next</button>
         </div>
     )
     }

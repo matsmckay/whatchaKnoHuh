@@ -1,5 +1,5 @@
 import app from '../firebase.js';
-import {push, ref, getDatabase, remove, } from 'firebase/database';
+import { push, ref, getDatabase, remove, } from 'firebase/database';
 import { useState } from 'react';
 
 const LeaderBoardForm = () => {
@@ -13,12 +13,19 @@ const LeaderBoardForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    // const results = 50
+    const newUser = {
+      name: userInput,
+      points: 0
+    }
+
     const database = getDatabase(app);
-    const dbRef = ref(database);
+    // const dbRef = ref(database);
+    const usersNodeRef = ref(database, `/user`)
 
-    push(dbRef, userInput);
+    push(usersNodeRef, newUser);
     setUserInput('');
-
+    //  console.log(results)
   }
 
   // DONT FORGET TO REMOVE THIS WHEN FINISHED !!!!
@@ -27,19 +34,29 @@ const LeaderBoardForm = () => {
     event.preventDefault();
 
     const database = getDatabase(app);
-    const dbRef = ref(database);
-
-    remove(dbRef);
+    const dbRef = ref(database, `/user`);
+    console.log(dbRef);
+    remove(database, `/user`);
   }
 
-  return(
+  // This handlePointCounter will be added to the logic for which word is true / false, just writing it here to cause im silly 
+
+  // const handlePointCounter = (event) => {
+  //   event.preventDefault();
+
+
+  // }
+
+  return (
     <div>
-        <form action="submit">
-          <label htmlFor="newUsername">Please enter your name:</label>
-          <input type="text" id="newUsername" onChange={handleInputChange} value={userInput} />
-          <button onClick={handleSubmit}>Yeeeeeeah!</button>
-          <button onClick={handleRemove}>clear</button>
-        </form>
+      <p>{userInput}</p>
+      <form action="submit">
+        <label htmlFor="newUsername">Please enter your name:</label>
+        <input type="text" id="newUsername" onChange={handleInputChange} value={userInput} />
+        <button onClick={handleSubmit}>Yeeeeeeah!</button>
+        <button onClick={handleRemove}>clear</button>
+        {/* <button onClick={handlePointCounter}>Right Answer</button> */}
+      </form>
     </div>
   )
 }
@@ -47,5 +64,6 @@ const LeaderBoardForm = () => {
 export default LeaderBoardForm;
 
 
-// Cant code until i fix this merge issue tmr so heres some pseudo
-// change handleSubmit to use the update function import from firebase instead of push. That way itll update the value of a node th
+// score counter
+// add a function / funciton def to the onClick that is attacted to the button that the user selects when decieding which word is correct
+// 
