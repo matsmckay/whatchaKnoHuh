@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
  
  const Home = () => {
     return (
-        <div>
+        <div className='wrapper'>
             <h2>Home</h2>
             <section className='howToPlay'>
                 <div>            
