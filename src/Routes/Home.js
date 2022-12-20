@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
  
  const Home = () => {
     return (
+        <>
         <div className='wrapper'>
-            <h2>Home</h2>
             <section className='howToPlay'>
-                <div>            
+                <div>    
+                    <h2>How To Play</h2>       
                     <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, dignissimos voluptate odio repellat deleniti fugit consequatur, nihil, quaerat doloribus eos cum cupiditate labore corporis minima assumenda consequuntur quibusdam. Cumque, ea?
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias corporis eligendi quisquam, voluptas at esse officia quae pariatur culpa! Error earum tenetur natus beatae explicabo ullam reprehenderit corrupti corporis nisi!
@@ -18,6 +19,12 @@ import { Link } from 'react-router-dom';
                 </div>
             </section>
         </div>
+        <footer>
+            <div className='wrapper'>
+            Created @ Juno 2022
+            </div>
+        </footer>
+        </>
 
     )
  }
