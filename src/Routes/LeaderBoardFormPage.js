@@ -1,4 +1,3 @@
-import {Link} from 'react-router-dom'
 import LeaderBoardForm from '../comp/LeaderBoardForm'
 
 const LeaderBoardFormPage = () => {

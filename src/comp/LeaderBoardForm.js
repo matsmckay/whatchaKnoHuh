@@ -1,10 +1,12 @@
 import app from '../firebase.js';
 import { push, ref, getDatabase, remove, } from 'firebase/database';
 import { useState } from 'react';
+import { useNavigate  } from 'react-router-dom';
 
 const LeaderBoardForm = () => {
 
   const [userInput, setUserInput] = useState([]);
+  const navigate = useNavigate()
 
   const handleInputChange = (event) => {
     setUserInput(event.target.value);
@@ -26,6 +28,9 @@ const LeaderBoardForm = () => {
     push(usersNodeRef, newUser);
     setUserInput('');
     //  console.log(results)
+    if (newUser) {
+      navigate("/leaderboard")
+    }
   }
 
   // DONT FORGET TO REMOVE THIS WHEN FINISHED !!!!
@@ -58,6 +63,7 @@ const LeaderBoardForm = () => {
         {/* <button onClick={handlePointCounter}>Right Answer</button> */}
       </form>
     </div>
+
   )
 }
 
