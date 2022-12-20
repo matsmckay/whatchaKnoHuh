@@ -18,7 +18,7 @@ const WordDef = ({ wordDef, triggerReRender }) => {
       dataResponse: "json",
       params: {
         word: word,
-        limit: 5,
+        limit: 10,
         api_key: keyRadojko
       }
     }).then((response) => {

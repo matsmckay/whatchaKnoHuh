@@ -1,5 +1,5 @@
 
-const useRandom = () => {
+const getRandom = () => {
       
         const homoList = [
 
@@ -33,4 +33,4 @@ const useRandom = () => {
         return word
 }
 
-export default useRandom;
+export default getRandom;
