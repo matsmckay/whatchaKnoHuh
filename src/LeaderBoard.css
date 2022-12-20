@@ -6,7 +6,8 @@ html { box-sizing: border-box;}
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
-h2 {
+.leaderboardContainer h2 {
+    font-size: 2rem;
     padding-top: 100px;
     text-align: center;
 }
@@ -42,7 +43,7 @@ h2 {
 .leaderBoardLi {
     display: none;
 }
-.leaderBoardUl li:nth-child(-n+5) {
+.leaderBoardUl li:nth-child(-n+6) {
     display: flex;
 }
 
