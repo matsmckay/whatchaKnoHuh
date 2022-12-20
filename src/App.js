@@ -21,7 +21,7 @@ function App() {
     <div className='homePage'>
       <div className='wrapper'>
         <header className='header'>
-          <h1>What do YOU no?</h1>
+          <h1> <Link to="/">What do YOU no?</Link></h1>
           <nav>
             <ul className='navUl'>
               <li>
@@ -34,9 +34,6 @@ function App() {
           </nav>
         </header>
       </div>
-      <div className='wrapper'>
-      </div>
-
 
 
       <Routes>
