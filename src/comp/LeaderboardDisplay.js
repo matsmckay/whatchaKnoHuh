@@ -1,7 +1,6 @@
 import app from '../firebase.js';
-import { push, ref, getDatabase, onValue, get } from 'firebase/database';
+import {  ref, getDatabase, onValue } from 'firebase/database';
 import { useEffect, useState } from 'react';
-import LeaderboardForm from './LeaderBoardForm.js';
 
 const LeaderboardDisplay = () => {
 

@@ -20,7 +20,7 @@ const FetchCall = () => {
 
 
     //this var selects random word from the hook
-    let randomWord = useRandom();
+    let randomWord  = useRandom();
 
     useEffect (() => {
         
