@@ -22,10 +22,11 @@ const LeaderboardDisplay = () => {
       const updatedDbInfo = [];
 
       for (let key in data) {
-        console.log(data[key]);
+        console.log(data[key].points);
         updatedDbInfo.push(data[key]);
-        setUsername(updatedDbInfo);
       }
+      updatedDbInfo.sort((a, b) => b.points - a.points);
+      setUsername(updatedDbInfo);
 
     })
 

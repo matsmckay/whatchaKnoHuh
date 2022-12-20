@@ -12,8 +12,6 @@ h2 {
 }
 .topScores {
     border-radius: 10px;
-    border: 2px solid red;
-
 }
 .leaderBoardUl {
     width: 70%;
@@ -26,14 +24,19 @@ h2 {
     width: 100%;
     margin: 0 auto;
     justify-content: space-between;
+    text-transform: capitalize;
+    font-weight: 700;
+    letter-spacing: 2px;
 }
 
 
 .leaderBoardLi:nth-child(odd) {
-    background-color: #6156f988;
+    background-color: #6056f9;
+    color: #cfff31;
 }
 .leaderBoardLi:nth-child(even) {
-    background-color: #cfff319c;
+    background-color: #cfff31;
+    color: #6056f9;
 }
 
 .leaderBoardLi {
