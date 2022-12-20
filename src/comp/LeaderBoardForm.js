@@ -30,14 +30,14 @@ const LeaderBoardForm = () => {
 
   // DONT FORGET TO REMOVE THIS WHEN FINISHED !!!!
 
-  const handleRemove = (event) => {
-    event.preventDefault();
+  // const handleRemove = (event) => {
+  //   event.preventDefault();
 
-    const database = getDatabase(app);
-    const dbRef = ref(database, `/user`);
-    console.log(dbRef);
-    remove(database, `/user`);
-  }
+  //   const database = getDatabase(app);
+  //   const dbRef = ref(database, `/user`);
+  //   console.log(dbRef);
+  //   remove(database, `/user`);
+  // }
 
   // This handlePointCounter will be added to the logic for which word is true / false, just writing it here to cause im silly 
 
@@ -48,14 +48,19 @@ const LeaderBoardForm = () => {
   // }
 
   return (
-    <div>
+    <div className='LeaderForm'>
       <p>{userInput}</p>
       <form action="submit">
-        <label htmlFor="newUsername">Please enter your name:</label>
-        <input type="text" id="newUsername" onChange={handleInputChange} value={userInput} />
-        <button onClick={handleSubmit}>Yeeeeeeah!</button>
-        <button onClick={handleRemove}>clear</button>
-        {/* <button onClick={handlePointCounter}>Right Answer</button> */}
+        <label htmlFor="newUsername"></label>
+        <input type="text" 
+        id="newUsername" 
+        onChange={handleInputChange} 
+        value={userInput} 
+        placeholder='Please enter your name'
+        required
+        />
+        <button onClick={handleSubmit} className='userNameInputButton'>Yeeeeeeah!</button>
+        {/* <button onClick={handleRemove}>clear</button> */}
       </form>
     </div>
   )

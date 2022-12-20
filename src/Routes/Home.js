@@ -16,6 +16,9 @@ import { Link } from 'react-router-dom';
                     <button className='play'>
                         <Link to="/GamePage">Play Now!</Link>
                     </button>
+                    <button>
+                        <Link to='/LeaderBoardFormPage'>DEV</Link>
+                    </button>
                 </div>
             </section>
         </div>
