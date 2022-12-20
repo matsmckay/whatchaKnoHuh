@@ -60,11 +60,16 @@ const [progressBar, setProgressBar] = useState(0)
   console.log(userScore)
 
   return(
-    <div>
-      <h2>{userScore}</h2>
-      <h2>{progressBar}</h2>
-      <button onClick={handleClick}>{displayHomo[0]}</button>
-      <button onClick={handleClickTwo}>{displayHomo[1]}</button>
+    <div className="buttonsAndProgress">
+      <div className="buttons">
+        <h2>Options</h2>
+        <button onClick={handleClick}>{displayHomo[0]}</button>
+        <button onClick={handleClickTwo}>{displayHomo[1]}</button>
+      </div>
+      <div className="pointProgress">
+        <h2>Points: {userScore}</h2>
+        <h2>Question: {progressBar}/10</h2>
+      </div>
     </div>
   )
 }

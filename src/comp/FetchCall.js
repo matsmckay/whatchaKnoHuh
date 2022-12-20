@@ -72,10 +72,12 @@ const FetchCall = () => {
     console.log(wordDef);
     
     return (
-        <div>
-            <h2>Issa Test Yoo Reelaxxx</h2>
-            {/* <p>{responseDef}</p> */}
-            <WordDef wordDef ={wordDef} triggerReRender={triggerReRender}/>
+        <div className="fetch">
+            <div className="question">
+                <h2>Definition</h2>
+                {/* <p>{responseDef}</p> */}
+                <WordDef wordDef ={wordDef} triggerReRender={triggerReRender}/>
+            </div>
             <TrueOrFalseButton
              triggerReRender={triggerReRender}
              setTriggerReRender={setTriggerReRender}
