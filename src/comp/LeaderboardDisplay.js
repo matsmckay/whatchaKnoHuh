@@ -45,7 +45,6 @@ const LeaderboardDisplay = () => {
           })
         }
       </ul>
-      <LeaderboardForm />
     </div>
   )
 }
