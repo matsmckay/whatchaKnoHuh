@@ -5,35 +5,63 @@
     background: #e3f4f3
 }
 
+.creditHeader {
+    text-align: center;
+    margin-top: 50px;
+    border: 2px solid#cfff31;
+}
+
 .creditsTeamUl {
+    padding: 25px 0;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
 }
 
 .imageContainer {
     display: flex;
-    justify-content: center;
+    justify-content: left;
 }
 
 .creditsTeamLi {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 0 6px;
+    padding-bottom: 15px;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25%;
+}
+
+.creditsTeamLi .creditBio {
+    font-size: .75rem;
+    padding: 5px 10px;
+    text-align: justify;
 
 }
 
 .email {
     color: #6056f9;
-    ;
     text-decoration: none;
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: #cfff31;
+    background-color: #6056f9;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
 }
 
 .team {
     color: #6056f9;
-    ;
+    text-transform: uppercase;
     text-decoration: none;
 }
 
 .creditImg {
-    border-radius: 50%;
+
+    margin-bottom: 16px;
+
 
 }
