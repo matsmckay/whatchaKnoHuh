@@ -2,6 +2,7 @@ import app from '../firebase.js';
 import { push, ref, getDatabase, onValue, get } from 'firebase/database';
 import { useEffect, useState } from 'react';
 import LeaderboardForm from './LeaderBoardForm.js';
+import '../LeaderBoard.css'
 
 const LeaderboardDisplay = () => {
 
@@ -37,10 +38,10 @@ const LeaderboardDisplay = () => {
         {
           username.map((username) => {
             return (
-              <li key={username.key}>
-                <p>{username.name}</p>
-                <p>{username.points}</p>
-              </li>
+                  <li className='leaderBoardLi' key={username.key}>
+                    <p>{username.name}</p>
+                    <p>{username.points}</p>
+                  </li>   
             )
           })
         }
