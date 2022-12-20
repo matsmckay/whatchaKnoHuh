@@ -5,35 +5,157 @@
     background: #e3f4f3
 }
 
+.creditHeader {
+    text-align: center;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
 .creditsTeamUl {
+    padding: 15px 0;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+
 }
 
 .imageContainer {
     display: flex;
-    justify-content: center;
+    justify-content: left;
 }
 
 .creditsTeamLi {
+    box-shadow: 0 4px 8px 0 #cfff31;
+    margin: 0 6px;
+    padding-bottom: 15px;
     display: flex;
-
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25%;
 }
 
-.email {
+.creditsTeamLi p {
+    padding: 5px 10px;
+}
+
+.creditsTeamLi a {
+    font-weight: bold;
+}
+
+.creditBio {
+    font-size: .75rem;
+    padding: 5px 10px;
+    text-align: left;
+}
+
+
+.creditsEmail {
     color: #6056f9;
-    ;
     text-decoration: none;
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: #cfff31;
+    background-color: #6056f9;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    padding: 5px 10px;
+
 }
 
 .team {
     color: #6056f9;
-    ;
+    text-transform: uppercase;
     text-decoration: none;
+    font-size: 1rem;
 }
 
-/* .creditImg {
-    display: block;
+.creditImg {
+    margin-bottom: 16px;
+}
 
-} */
+@media (max-width: 1078px) {
+    .team {
+        font-size: 0.85rem;
+    }
+
+    .creditsTeamLi a {
+        font-size: 0.85rem;
+    }
+
+    .creditsTeamLi a:hover {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 958px) {
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .creditsTeamUl {
+        flex-wrap: wrap;
+    }
+
+    .creditsTeamLi {
+        width: calc(50% - 12px);
+        margin-bottom: 12px;
+    }
+}
+
+@media (max-width: 744px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .navUl li a {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 670px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .creditHeader {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 586px) {
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        flex-direction: wrap;
+    }
+
+    h1 {
+        text-align: center;
+        width: 100%;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 473px) {
+    .creditsTeamLi {
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    .creditHeader {
+        font-size: 1.1rem;
+    }
+
+    .creditsTeamUl {
+        padding-top: 0;
+    }
+
+}
