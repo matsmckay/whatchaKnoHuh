@@ -1,5 +1,6 @@
 import './App.css'
 import './HomeStyles.css'
+import './GamePage.css'
 
 import { Link, Routes, Route, } from 'react-router-dom';
 import GamePage from './Routes/GamePage.js';
