@@ -8,7 +8,7 @@
 .creditsTeamUl {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .imageContainer {
@@ -33,7 +33,7 @@
     text-decoration: none;
 }
 
-/* .creditImg {
-    display: block;
+.creditImg {
+    border-radius: 50%;
 
-} */
+}
