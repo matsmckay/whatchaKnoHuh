@@ -11,7 +11,6 @@ import LeaderBoardFormPage from './Routes/LeaderBoardFormPage';
 
 import ErrorPage from './Routes/ErrorPage.js';
 import Home from './Routes/Home';
-import LeaderBoardFormPage from './Routes/LeaderBoardFormPage';
 
 
 

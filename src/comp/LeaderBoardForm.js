@@ -33,24 +33,7 @@ const LeaderBoardForm = ({userScore}) => {
     }
   }
 
-  // DONT FORGET TO REMOVE THIS WHEN FINISHED !!!!
-
-  // const handleRemove = (event) => {
-  //   event.preventDefault();
-
-  //   const database = getDatabase(app);
-  //   const dbRef = ref(database, `/user`);
-  //   console.log(dbRef);
-  //   remove(database, `/user`);
-  // }
-
-  // This handlePointCounter will be added to the logic for which word is true / false, just writing it here to cause im silly 
-
-  // const handlePointCounter = (event) => {
-  //   event.preventDefault();
-
-
-  // }
+ 
 
   return (
     <div className='LeaderForm'>

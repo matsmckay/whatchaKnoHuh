@@ -54,7 +54,7 @@
   cursor: pointer;
 }
 
-.LeaderForm form .userNameInputButton:hover,
+/* .LeaderForm form .userNameInputButton:hover,
 .LeaderForm form .userNameInputButton:focus {
   font-size: 1.1rem;
-}
+} */
