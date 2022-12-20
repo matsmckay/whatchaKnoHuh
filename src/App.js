@@ -5,10 +5,7 @@ import { Link, Routes, Route, } from 'react-router-dom';
 import GamePage from './Routes/GamePage.js';
 import Leaderboard from './Routes/Leaderboard.js';
 import Credits from './Routes/Credits.js';
-import Matt from './Routes/Matt.js';
-import Daman from './Routes/Daman.js';
-import Radojko from './Routes/Radojko.js';
-import Tyler from './Routes/Tyler.js';
+
 import ErrorPage from './Routes/ErrorPage.js';
 import Home from './Routes/Home';
 
@@ -43,12 +40,9 @@ function App() {
         <Route path="/GamePage" element={<GamePage />} />
         <Route path="/leaderboard" element={<Leaderboard />}></Route>
 
-        <Route path="/credits/" element={<Credits />} >
-          <Route path="radojko" element={<Radojko />} />
-          <Route path="daman" element={<Daman />} />
-          <Route path="tyler" element={<Tyler />} />
-          <Route path="matt" element={<Matt />} />
-        </Route>
+        <Route path="/credits/" element={<Credits />} />
+
+        <Route path="*" element={<ErrorPage />} />
 
 
       </Routes>

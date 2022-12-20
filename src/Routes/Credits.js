@@ -12,7 +12,7 @@ const Credits = () => {
                         <img className="creditImg" src="https://ca.slack-edge.com/T02E8L5NKFV-U044ASBKNFM-bc3823597214-512" alt="" />
                         <h3 className="team">Radojko Radulovic</h3>
                         <p className="creditBio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste provident, inventore excepturi nesciunt neque sed temporibus error explicabo dolorem, quo ducimus sit! Porro atque veniam est animi tempore quaerat ut.</p>
-                        <p className="creditsHomepage"><a href="https://www.radojkoradulovic.com">radojkoradulovic.com</a></p>
+                        <p className="creditsHomepage"><a href="https://www.radoyko.com">radojkoradulovic.com</a></p>
                         <p><a className="creditsEmail" href="mailto:radulovicradojko@gmail.com">Contact</a></p>
                     </li>
                     <li className="creditsTeamLi">
@@ -26,7 +26,7 @@ const Credits = () => {
                         <img className="creditImg" src="https://ca.slack-edge.com/T02E8L5NKFV-U044PJ67L2D-9fd4f1335035-512" alt="" />
                         <h3 className="team">Tyler George</h3>
                         <p className="creditBio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste provident, inventore excepturi nesciunt neque sed temporibus error explicabo dolorem, quo ducimus sit! Porro atque veniam est animi tempore quaerat ut.</p>
-                        <p className="creditsHomepage"><a href="https://www.tylergeorge.com">tylergeorge.com</a></p>
+                        <p className="creditsHomepage"><a href="https://www.tylergeorge.ca">tylergeorge.com</a></p>
                         <p><a className="creditsEmail" href="mailto:tylerGeorge@email.com">Contact</a></p>
                     </li>
                     <li className="creditsTeamLi">
