@@ -1,5 +1,6 @@
 import './App.css'
 import './HomeStyles.css'
+import './LeaderFormStyles.css'
 import './GamePage.css'
 
 import { Link, Routes, Route, } from 'react-router-dom';
@@ -10,6 +11,7 @@ import LeaderBoardFormPage from './Routes/LeaderBoardFormPage';
 
 import ErrorPage from './Routes/ErrorPage.js';
 import Home from './Routes/Home';
+import LeaderBoardFormPage from './Routes/LeaderBoardFormPage';
 
 
 
@@ -38,6 +40,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
 
+        {/* Adding only for styling, DONT FORGET TO DELETE */}
+        <Route path="/LeaderBoardFormPage" element={<LeaderBoardFormPage />}></Route>
 
         <Route path="/GamePage" element={<GamePage />} />
         <Route path="/leaderboard" element={<Leaderboard />}></Route>

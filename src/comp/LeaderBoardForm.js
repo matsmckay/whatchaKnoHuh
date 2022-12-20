@@ -3,7 +3,7 @@ import { push, ref, getDatabase, remove, } from 'firebase/database';
 import { useState } from 'react';
 import { useNavigate  } from 'react-router-dom';
 
-const LeaderBoardForm = () => {
+const LeaderBoardForm = ({userScore}) => {
 
   const [userInput, setUserInput] = useState([]);
   const navigate = useNavigate()
@@ -18,7 +18,7 @@ const LeaderBoardForm = () => {
     // const results = 50
     const newUser = {
       name: userInput,
-      points: 0
+      points: userScore
     }
 
     const database = getDatabase(app);
@@ -35,14 +35,14 @@ const LeaderBoardForm = () => {
 
   // DONT FORGET TO REMOVE THIS WHEN FINISHED !!!!
 
-  const handleRemove = (event) => {
-    event.preventDefault();
+  // const handleRemove = (event) => {
+  //   event.preventDefault();
 
-    const database = getDatabase(app);
-    const dbRef = ref(database, `/user`);
-    console.log(dbRef);
-    remove(database, `/user`);
-  }
+  //   const database = getDatabase(app);
+  //   const dbRef = ref(database, `/user`);
+  //   console.log(dbRef);
+  //   remove(database, `/user`);
+  // }
 
   // This handlePointCounter will be added to the logic for which word is true / false, just writing it here to cause im silly 
 
@@ -53,14 +53,18 @@ const LeaderBoardForm = () => {
   // }
 
   return (
-    <div>
-      <p>{userInput}</p>
+    <div className='LeaderForm'>
       <form action="submit">
-        <label htmlFor="newUsername">Please enter your name:</label>
-        <input type="text" id="newUsername" onChange={handleInputChange} value={userInput} />
-        <button onClick={handleSubmit}>Yeeeeeeah!</button>
-        <button onClick={handleRemove}>clear</button>
-        {/* <button onClick={handlePointCounter}>Right Answer</button> */}
+        <label htmlFor="newUsername"></label>
+        <input type="text" 
+        id="newUsername" 
+        onChange={handleInputChange} 
+        value={userInput} 
+        placeholder='Please enter your name'
+        required
+        />
+        <button onClick={handleSubmit} className='userNameInputButton'>Yeeeeeeah!</button>
+        {/* <button onClick={handleRemove}>clear</button> */}
       </form>
     </div>
 
