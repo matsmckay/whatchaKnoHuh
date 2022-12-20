@@ -109,6 +109,39 @@
     h1 {
         font-size: 1.8rem;
     }
+
+    .navUl li a {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 670px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .creditHeader {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 586px) {
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        flex-direction: wrap;
+    }
+
+    h1 {
+        text-align: center;
+        width: 100%;
+    }
+
+    nav {
+        width: 100%;
+    }
+
 }
 
 @media (max-width: 473px) {
@@ -118,7 +151,7 @@
     }
 
     .creditHeader {
-        font-size: 1.25rem;
+        font-size: 1.1rem;
     }
 
     .creditsTeamUl {
