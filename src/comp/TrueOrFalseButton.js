@@ -1,4 +1,5 @@
 import { useState } from "react"
+import LeaderBoardForm from "./LeaderBoardForm"
 
 const TrueOrFalseButton = ({triggerReRender, setTriggerReRender, displayHomo, wordDef}) => {
 
@@ -65,6 +66,9 @@ const [progressBar, setProgressBar] = useState(0)
       <h2>{progressBar}</h2>
       <button onClick={handleClick}>{displayHomo[0]}</button>
       <button onClick={handleClickTwo}>{displayHomo[1]}</button>
+      <LeaderBoardForm 
+      userScore={userScore}
+      />
     </div>
   )
 }

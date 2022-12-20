@@ -2,7 +2,7 @@ import app from '../firebase.js';
 import { push, ref, getDatabase, remove, } from 'firebase/database';
 import { useState } from 'react';
 
-const LeaderBoardForm = () => {
+const LeaderBoardForm = ({userScore}) => {
 
   const [userInput, setUserInput] = useState([]);
 
@@ -16,7 +16,7 @@ const LeaderBoardForm = () => {
     // const results = 50
     const newUser = {
       name: userInput,
-      points: 0
+      points: userScore
     }
 
     const database = getDatabase(app);
@@ -49,7 +49,6 @@ const LeaderBoardForm = () => {
 
   return (
     <div className='LeaderForm'>
-      <p>{userInput}</p>
       <form action="submit">
         <label htmlFor="newUsername"></label>
         <input type="text" 
