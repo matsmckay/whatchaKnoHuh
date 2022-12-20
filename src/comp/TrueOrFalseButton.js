@@ -10,29 +10,51 @@ const [progressBar, setProgressBar] = useState(0)
 
   const handleClick = () => {
     
-    if ( displayHomo[0] === wordDef)
-    {
-      setUserScore(userScore + 1)
+    if (progressBar < 10) {
+      if ( displayHomo[0] === wordDef) {
+        setUserScore(userScore + 1)
+      }
+      else {
+        setUserScore(userScore -0.5)
+       }
+      setTriggerReRender(!triggerReRender)
+      setProgressBar(progressBar +1)
+
     }
     else {
-     setUserScore(userScore -0.5)
+      if ( displayHomo[0] === wordDef) {
+        setUserScore(userScore + 1)
+      }
+      else {
+        setUserScore(userScore -0.5)
+       }
+      console.log('done done')
+      // LINK TO LeaderBoardFormPage
     }
-    setTriggerReRender(!triggerReRender)
-    setProgressBar(progressBar +1)
-    
   } 
 
   const handleClickTwo = () => {
-    
-    if ( displayHomo[1] === wordDef)
-    {
-      setUserScore(userScore + 1)
+    if (progressBar < 10) {
+      if ( displayHomo[1] === wordDef) {
+        setUserScore(userScore + 1)
+      }
+      else {
+        setUserScore(userScore -0.5)
+       }
+      setTriggerReRender(!triggerReRender)
+      setProgressBar(progressBar +1)
+
     }
     else {
-     setUserScore(userScore -0.5)
+      if ( displayHomo[1] === wordDef) {
+        setUserScore(userScore + 1)
+      }
+      else {
+        setUserScore(userScore -0.5)
+       }
+      console.log('done done')
+      // LINK TO LeaderBoardFormPage
     }
-    setTriggerReRender(!triggerReRender)
-    setProgressBar(progressBar +1)
   } 
 
   console.log(userScore)
