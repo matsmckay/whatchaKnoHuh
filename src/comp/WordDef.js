@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from "react"
 
 
 const WordDef = ({ wordDef, triggerReRender, setTriggerReRender }) => {
-  const keyRadojko = 'cb0kpdqhzyzmlou550ldukoadiyayyvp5607r0qnhpxxo85fb'
-  // const keyMatt = '27lonz8iuunssx6o3uadbmcjgcyja363kgwsvbkxoqdada30f'
+  // const keyRadojko = 'cb0kpdqhzyzmlou550ldukoadiyayyvp5607r0qnhpxxo85fb'
+  const keyMatt = '27lonz8iuunssx6o3uadbmcjgcyja363kgwsvbkxoqdada30f'
 
   const [responseDef, setResponseDef] = useState('');
   const parseDef = /<(?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])+>/g; 
@@ -27,7 +27,7 @@ const WordDef = ({ wordDef, triggerReRender, setTriggerReRender }) => {
         params: {
           word: word,
           limit: 10,
-          api_key: keyRadojko
+          api_key: keyMatt
         }
       }).then((response) => {
         console.log(response)
@@ -37,9 +37,10 @@ const WordDef = ({ wordDef, triggerReRender, setTriggerReRender }) => {
             setTriggerReRender(!triggerReRender)
           }
           else {
-            let parseString = (defText.text).replace(parseDef, '')
-            setResponseDef(parseString);
+            // let parseString = (defText.text).replace(parseDef, '')
+            setResponseDef(defText.text);
           }
+          return defText.text
         })
       })
 
