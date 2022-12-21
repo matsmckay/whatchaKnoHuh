@@ -10,7 +10,7 @@ const WordDef = ({ wordDef, triggerReRender, setTriggerReRender }) => {
   const [responseDef, setResponseDef] = useState('');
   
 
-  useCallback(()=>{
+  const yolo = useCallback(()=>{
     setTriggerReRender()
   }, [triggerReRender])
 
@@ -49,8 +49,8 @@ const WordDef = ({ wordDef, triggerReRender, setTriggerReRender }) => {
         let stupidName = definition.text
         console.log(stupidName)
         if (stupidName === undefined){
-          setTriggerReRender(!triggerReRender)
-          // yolo()
+          // setTriggerReRender(!triggerReRender)
+          yolo()
         }
         else {
           let parseString = stupidName.replace(parseDef, '')
