@@ -4,16 +4,18 @@ import { useEffect, useRef, useState } from "react"
 
 
 const WordDef = ({ wordDef, triggerReRender, setTriggerReRender }) => {
-  const keyRadojko = 'cb0kpdqhzyzmlou550ldukoadiyayyvp5607r0qnhpxxo85fb'
+  // const keyRadojko = 'cb0kpdqhzyzmlou550ldukoadiyayyvp5607r0qnhpxxo85fb'
   const keyMatt = '27lonz8iuunssx6o3uadbmcjgcyja363kgwsvbkxoqdada30f'
 
   const [responseDef, setResponseDef] = useState('');
-  const parseDef = /<(?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])+>/g; 
+  
 
   // To prevent useEffect on page mount
   const isFirstRender = useRef(true)
 
   useEffect(() => {
+    const parseDef = /<(?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])+>/g; 
+    
     if (isFirstRender.current) {
       isFirstRender.current = false
     }
