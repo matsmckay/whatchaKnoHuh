@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useNavigate, Route, Routes } from "react-router-dom"
 import LeaderBoardFormPage from "../Routes/LeaderBoardFormPage"
 
-const TrueOrFalseButton = ({triggerReRender, setTriggerReRender, displayHomo, wordDef}) => {
+const TrueOrFalseButton = ({setWordDef, displayHomo, wordDef}) => {
 
 const [userScore, setUserScore] = useState(0)
 const [progressBar, setProgressBar] = useState(0)
@@ -21,7 +21,7 @@ const navigate = useNavigate();
       else {
         setUserScore(userScore -0.5)
        }
-      setTriggerReRender(!triggerReRender)
+      setWordDef('')
       setProgressBar(progressBar +1)
 
     }
@@ -47,7 +47,7 @@ const navigate = useNavigate();
       else {
         setUserScore(userScore -0.5)
        }
-      setTriggerReRender(!triggerReRender)
+       setWordDef('')
       setProgressBar(progressBar +1)
 
     }

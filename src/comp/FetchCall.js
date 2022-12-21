@@ -23,11 +23,12 @@ const FetchCall = () => {
     useEffect (() => {
         
         let randomWord  = getRandom();
-        console.log(randomWord);
+    
 
-        // console.log(randomResult);
-    
-    
+       
+    if (wordDef) {
+        return
+    }
         axios({
             url: `https://api.datamuse.com/words`,
             method: "GET",
@@ -39,45 +40,44 @@ const FetchCall = () => {
         }).then((response) => {
             //NEXT STEP : ADD error handling for when only one word is returned - have the api run again until two words are returned
             
-            // console.log(response.data[0])
-            const similarSound = response.data; 
-            // console.log(response);
-            console.log(similarSound);
+ 
+            const similarSound = response.data[0]; 
+  
+           
             
-        
-            if (similarSound.numSyllables > 1 || similarSound.length === 0 ) {
+            console.log("looking at the fetch call data", similarSound);
+            if (similarSound === undefined || similarSound.numSyllables > 1 ) {
                 setTriggerReRender(!triggerReRender)
             }
             else {
 
-                const twoWords = [similarSound[0].word, randomWord];
-                console.log(twoWords);
+                const twoWords = [similarSound.word, randomWord];
+          
                 
                 const wordChoice = (twoWords[Math.floor(Math.random() * twoWords.length)]);
-                console.log(wordChoice);
+            
                 
                 setWordDef(wordChoice);
-                // console.log(wordDef);
                 
                 setDisplayHomo(twoWords);
-                console.log(twoWords);
+            
                 
             }
         })
-    } ,[triggerReRender])
+    } ,[wordDef,triggerReRender])
 
 
-    console.log(wordDef);
+ 
     
     return (
         <div className="fetch">
             <div className="question">
                 <h2>Definition</h2>
-                <WordDef wordDef ={wordDef} triggerReRender={triggerReRender} setTriggerReRender={setTriggerReRender}/>
+                <WordDef wordDef ={wordDef} setWordDef={setWordDef}/>
             </div>
             <TrueOrFalseButton
-             triggerReRender={triggerReRender}
-             setTriggerReRender={setTriggerReRender}
+            setWordDef={setWordDef}
+ 
              displayHomo={displayHomo}
              wordDef={wordDef}             
              />
