@@ -58,7 +58,3 @@ const LeaderBoardForm = ({userScore}) => {
 
 export default LeaderBoardForm;
 
-
-// score counter
-// add a function / funciton def to the onClick that is attacted to the button that the user selects when decieding which word is correct
-// 

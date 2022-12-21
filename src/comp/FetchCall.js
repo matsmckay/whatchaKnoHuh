@@ -18,7 +18,6 @@ const FetchCall = () => {
     // const [oneWord, setOneWord] = useState('');
 
 
-
     //this var selects random word from the hook
     
     useEffect (() => {
@@ -74,8 +73,7 @@ const FetchCall = () => {
         <div className="fetch">
             <div className="question">
                 <h2>Definition</h2>
-                {/* <p>{responseDef}</p> */}
-                <WordDef wordDef ={wordDef} triggerReRender={triggerReRender}/>
+                <WordDef wordDef ={wordDef} triggerReRender={triggerReRender} setTriggerReRender={setTriggerReRender}/>
             </div>
             <TrueOrFalseButton
              triggerReRender={triggerReRender}
