@@ -6,24 +6,21 @@ const Home = () => {
         <>
             <div className='wrapper'>
                 <section className='howToPlay'>
-                    <div>
+                    <div className='howToFlex'>
                         <h2>How To Play</h2>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, dignissimos voluptate odio repellat deleniti fugit consequatur, nihil, quaerat doloribus eos cum cupiditate labore corporis minima assumenda consequuntur quibusdam. Cumque, ea?
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias corporis eligendi quisquam, voluptas at esse officia quae pariatur culpa! Error earum tenetur natus beatae explicabo ullam reprehenderit corrupti corporis nisi!
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia laudantium deserunt, totam fugit, iste aspernatur, odit quas ad earum quo molestias ullam? Doloribus dicta blanditiis veritatis sint eius exercitationem fugiat.
+                        This is a learning game. Players will be presented with two randomly generated homophonous words - like piece and peace - and a single definition. Players must match the correct spelling to the definition. 
+                        There are up to 10 questions. Each correct answer is worth 1 point. However, if a player chooses the wrong homophonous, they loose -0.5 points. 
+                        At the end, players have the option to save their score to the leaderboard! 
                         </p>
-                        <button className='play'>
-                            <Link to="/GamePage">Play Now!</Link>
-                        </button>
+                        <div className='btnDiv'>
+                            <button className='play'>
+                                <Link to="/GamePage">Play Now!</Link>
+                            </button>
+                        </div>
                     </div>
                 </section>
             </div>
-            <footer>
-                <div className='wrapper'>
-                    Created @ Juno 2022
-                </div>
-            </footer>
         </>
 
     )

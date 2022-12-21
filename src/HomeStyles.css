@@ -45,11 +45,13 @@ h1 {
     text-align: center;
 }
 
-.howToPlay div {
+.howToFlex {
+    display: flex;
+    flex-direction: column;
     margin-top: 180px;
     border: 2px solid #6056f6;
     border-radius: 15px;
-    height: 330px;
+    height:fit-content;
 }
 
 p {
@@ -70,12 +72,24 @@ p {
     font-weight: bold;
 }
 
+.play:hover,
+.play:focus {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    background-color: #cfff31;
+    color: #6056f6;
+}
+
+.btnDiv {
+    height: 70px;
+}
+
 
 footer {
     text-align: center;
     margin-top: 212px;
     padding: 10px;
-    /* border-top: black 2px solid ; */
     background-color: #6056f6;
     font-size: 0.9rem;
     position: fixed;
