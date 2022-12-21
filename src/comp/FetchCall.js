@@ -17,9 +17,7 @@ const FetchCall = () => {
     const [triggerReRender, setTriggerReRender] = useState(false);
     // const [oneWord, setOneWord] = useState('');
 
-    const yolo = useCallback(()=>{
-        setTriggerReRender()
-      }, [triggerReRender])
+    
     //this var selects random word from the hook
     
     useEffect (() => {
