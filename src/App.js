@@ -39,8 +39,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
 
-        {/* Adding only for styling, DONT FORGET TO DELETE */}
-        <Route path="/LeaderBoardFormPage" element={<LeaderBoardFormPage />}></Route>
 
         <Route path="/GamePage" element={<GamePage />} />
         <Route path="/leaderboard" element={<Leaderboard />}></Route>

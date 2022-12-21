@@ -3,12 +3,11 @@ import { useEffect, useState } from "react"
 
 
 
-const WordDef = ({ wordDef }) => {
+const WordDef = ({ wordDef, triggerReRender }) => {
   const keyRadojko = 'cb0kpdqhzyzmlou550ldukoadiyayyvp5607r0qnhpxxo85fb'
   // const keyMatt = '27lonz8iuunssx6o3uadbmcjgcyja363kgwsvbkxoqdada30f'
 
   const [responseDef, setResponseDef] = useState('');
-  // const [triggerReRender, setTriggerReRender] = useState(false);
 
   useEffect(() => {
     let word = wordDef
@@ -29,11 +28,7 @@ const WordDef = ({ wordDef }) => {
       let definition = response.data
       definition.find((defText) => {
         setResponseDef(defText.text);
-        // if (defText.text === '') {
-        //   setTriggerReRender(!triggerReRender)
-        // }else {
-        //   return defText.text
-        // }
+        return defText.text
       })
 
     })
