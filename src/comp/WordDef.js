@@ -1,19 +1,24 @@
 import axios from "axios"
-import { useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 
 
 
-const WordDef = ({ wordDef, triggerReRender, setTriggerReRender }) => {
+const WordDef = ({ wordDef, yolo }) => {
   // const keyRadojko = 'cb0kpdqhzyzmlou550ldukoadiyayyvp5607r0qnhpxxo85fb'
   const keyMatt = '27lonz8iuunssx6o3uadbmcjgcyja363kgwsvbkxoqdada30f'
 
   const [responseDef, setResponseDef] = useState('');
   
 
+  
+
   // To prevent useEffect on page mount
   const isFirstRender = useRef(true)
 
   useEffect(() => {
+
+    
+
     const parseDef = /<(?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])+>/g; 
     
     if (isFirstRender.current) {
@@ -42,7 +47,8 @@ const WordDef = ({ wordDef, triggerReRender, setTriggerReRender }) => {
         let stupidName = definition.text
         console.log(stupidName)
         if (stupidName === undefined){
-          setTriggerReRender(!triggerReRender)
+          // setTriggerReRender(!triggerReRender)
+          yolo()
         }
         else {
           let parseString = stupidName.replace(parseDef, '')

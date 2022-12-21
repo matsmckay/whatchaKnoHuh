@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import getRandom from "../hooks/getRandom";
 import WordDef from "./WordDef";
@@ -17,7 +17,9 @@ const FetchCall = () => {
     const [triggerReRender, setTriggerReRender] = useState(false);
     // const [oneWord, setOneWord] = useState('');
 
-
+    const yolo = useCallback(()=>{
+        setTriggerReRender()
+      }, [triggerReRender])
     //this var selects random word from the hook
     
     useEffect (() => {
