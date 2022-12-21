@@ -30,7 +30,6 @@ const WordDef = ({ wordDef, triggerReRender }) => {
         setResponseDef(defText.text);
         return defText.text
       })
-
     })
 
 
