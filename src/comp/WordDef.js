@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react"
 
 const WordDef = ({ wordDef, triggerReRender, setTriggerReRender }) => {
   const keyRadojko = 'cb0kpdqhzyzmlou550ldukoadiyayyvp5607r0qnhpxxo85fb'
-  // const keyMatt = '27lonz8iuunssx6o3uadbmcjgcyja363kgwsvbkxoqdada30f'
+  const keyMatt = '27lonz8iuunssx6o3uadbmcjgcyja363kgwsvbkxoqdada30f'
 
   const [responseDef, setResponseDef] = useState('');
   const parseDef = /<(?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])+>/g; 
@@ -27,20 +27,25 @@ const WordDef = ({ wordDef, triggerReRender, setTriggerReRender }) => {
         params: {
           word: word,
           limit: 10,
-          api_key: keyRadojko
+          api_key: keyMatt
         }
       }).then((response) => {
         console.log(response)
-        let definition = response.data
-        definition.find((defText) => {
-          if (defText.text === 0){
-            setTriggerReRender(!triggerReRender)
-          }
-          else {
-            let parseString = (defText.text).replace(parseDef, '')
-            setResponseDef(parseString);
-          }
+        let arrayOfDefinitions = response.data
+        let definition = arrayOfDefinitions.find((defText) => {
+          console.log(defText)
+          return defText.text
         })
+        console.log(definition)
+        let stupidName = definition.text
+        console.log(stupidName)
+        if (stupidName === undefined){
+          setTriggerReRender(!triggerReRender)
+        }
+        else {
+          let parseString = stupidName.replace(parseDef, '')
+          setResponseDef(parseString)
+        }
       })
 
     }
@@ -48,8 +53,16 @@ const WordDef = ({ wordDef, triggerReRender, setTriggerReRender }) => {
 
   }, [wordDef])
 
+  // let parseString = (defText.text).replace(parseDef, '')
+  // setResponseDef(parseString);
 
-
+  // if (defText.text === undefined){
+  //   setTriggerReRender(!triggerReRender)
+  // }
+  // else {
+  //   setResponseDef(defText.text)
+  // }
+  
   return (
     <div>
       <p>{responseDef}</p>

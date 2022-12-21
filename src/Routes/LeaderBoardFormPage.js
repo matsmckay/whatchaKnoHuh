@@ -8,11 +8,13 @@ const LeaderBoardFormPage = ({userScore}) => {
     <div>
       <section className="FormPage">
       <div className="wrapper">
-        <h2>Your Score was:</h2>
-        <h2>{location.state.userScore}</h2>
-        <LeaderBoardForm
-        userScore={userScore}
-         />
+        <div className="formStyling">
+          <h2>Your Score was:</h2>
+          <p>{location.state.userScore}</p>
+          <LeaderBoardForm
+          userScore={userScore}
+          />
+        </div>
       </div>
       </section>
     </div>
