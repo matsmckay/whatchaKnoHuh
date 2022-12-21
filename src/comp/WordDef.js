@@ -36,7 +36,7 @@ const WordDef = ({ wordDef, triggerReRender, setTriggerReRender }) => {
           console.log(defText)
           return defText.text
         })
-        console.log(definition.text)
+        console.log(definition)
         let stupidName = definition.text
         console.log(stupidName)
         if (stupidName === undefined){
