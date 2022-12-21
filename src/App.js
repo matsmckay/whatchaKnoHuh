@@ -34,6 +34,11 @@ function App() {
           </nav>
         </header>
       </div>
+        <footer>
+          Juno College is epic
+        </footer>
+
+
 
 
       <Routes>
