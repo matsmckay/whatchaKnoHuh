@@ -1,4 +1,3 @@
-import { Outlet } from 'react-router-dom'
 import LeaderboardDisplay from '../comp/LeaderboardDisplay';
 import '../LeaderBoard.css'
 

@@ -1,7 +1,6 @@
 import app from '../firebase.js';
 import {  ref, getDatabase, onValue } from 'firebase/database';
 import { useEffect, useState } from 'react';
-import LeaderboardForm from './LeaderBoardForm.js';
 import '../LeaderBoard.css'
 // import { useLocation  } from 'react-router-dom';
 
