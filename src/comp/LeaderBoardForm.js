@@ -18,7 +18,7 @@ const LeaderBoardForm = ({userScore}) => {
     // const results = 50
     const newUser = {
       name: userInput,
-      points: userScore
+      points: 0
     }
 
     const database = getDatabase(app);
