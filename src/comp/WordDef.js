@@ -1,5 +1,5 @@
 import axios from "axios"
-import { useCallback, useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 
 
@@ -10,9 +10,9 @@ const WordDef = ({ wordDef, triggerReRender, setTriggerReRender }) => {
   const [responseDef, setResponseDef] = useState('');
   
 
-  const yolo = useCallback(()=>{
-    setTriggerReRender()
-  }, [triggerReRender])
+  // const yolo = useCallback(()=>{
+  //   setTriggerReRender()
+  // }, [triggerReRender])
 
   // To prevent useEffect on page mount
   const isFirstRender = useRef(true)
@@ -49,8 +49,8 @@ const WordDef = ({ wordDef, triggerReRender, setTriggerReRender }) => {
         let stupidName = definition.text
         console.log(stupidName)
         if (stupidName === undefined){
-          // setTriggerReRender(!triggerReRender)
-          yolo()
+          setTriggerReRender(!triggerReRender)
+          // yolo()
         }
         else {
           let parseString = stupidName.replace(parseDef, '')
