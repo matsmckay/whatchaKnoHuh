@@ -8,7 +8,7 @@ const [userScore, setUserScore] = useState(0)
 const [progressBar, setProgressBar] = useState(0)
 
 const navigate = useNavigate();
-  
+
 
   const handleClick = () => {
 
@@ -32,7 +32,9 @@ const navigate = useNavigate();
       else {
         setUserScore(userScore -0.5)
        }
-      navigate("/leaderboardforum")
+      navigate("/leaderboardforum", {
+        state : {userScore : userScore}
+      } )
       // LINK TO LeaderBoardFormPage
     }
   } 
@@ -56,12 +58,13 @@ const navigate = useNavigate();
       else {
         setUserScore(userScore -0.5)
        }
-      navigate("/leaderboardforum")
+       navigate("/leaderboardforum", {
+        state : {userScore : userScore}
+      } )
       // LINK TO LeaderBoardFormPage
     }
   } 
 
-  console.log(userScore)
 
   return(
     <>

@@ -1,9 +1,11 @@
 import app from '../firebase.js';
-import { push, ref, getDatabase, remove, } from 'firebase/database';
+import { push, ref, getDatabase } from 'firebase/database';
 import { useState } from 'react';
-import { useNavigate  } from 'react-router-dom';
+import { useNavigate, useLocation  } from 'react-router-dom';
 
 const LeaderBoardForm = ({userScore}) => {
+  const location = useLocation()
+  console.log(location.state);
 
   const [userInput, setUserInput] = useState([]);
   const navigate = useNavigate()
@@ -18,7 +20,7 @@ const LeaderBoardForm = ({userScore}) => {
     // const results = 50
     const newUser = {
       name: userInput,
-      points: 0
+      points: location.state.userScore
     }
 
     const database = getDatabase(app);
@@ -56,7 +58,3 @@ const LeaderBoardForm = ({userScore}) => {
 
 export default LeaderBoardForm;
 
-
-// score counter
-// add a function / funciton def to the onClick that is attacted to the button that the user selects when decieding which word is correct
-// 
