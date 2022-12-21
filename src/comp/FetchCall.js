@@ -45,7 +45,7 @@ const FetchCall = () => {
             console.log(similarSound);
             
         
-            if (similarSound.numSyllables >= 2 || similarSound.length === 0 ) {
+            if (similarSound.numSyllables > 1 || similarSound.length === 0 ) {
                 setTriggerReRender(!triggerReRender)
             }
             else {
