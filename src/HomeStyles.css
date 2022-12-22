@@ -1,5 +1,6 @@
 body {
     background-color: #e3f4f3;
+    height: 100vh;
 }
 
 .header {
@@ -86,7 +87,7 @@ p {
 }
 
 
-footer {
+/* footer {
     text-align: center;
     margin-top: 212px;
     padding: 10px;
@@ -95,10 +96,12 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-}
+} */
 .flex {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
+
+/* MEDIA QSS */
