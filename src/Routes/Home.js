@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
 
-    //usestate
     return (
         <>
             <div className='wrapper'>

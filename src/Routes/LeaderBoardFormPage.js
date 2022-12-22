@@ -2,8 +2,9 @@ import LeaderBoardForm from '../comp/LeaderBoardForm'
 import { useLocation } from "react-router-dom"
 
 const LeaderBoardFormPage = ({userScore}) => {
+
   const location = useLocation()
-  console.log(location.state);
+
   return(
     <div>
       <section className="FormPage">

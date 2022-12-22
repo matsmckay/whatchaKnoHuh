@@ -12,10 +12,6 @@ import LeaderBoardFormPage from './Routes/LeaderBoardFormPage';
 import ErrorPage from './Routes/ErrorPage.js';
 import Home from './Routes/Home';
 
-
-
-
-
 function App() {
   return (
     <div className='homePage'>
@@ -38,22 +34,13 @@ function App() {
           Juno College is epic
         </footer>
 
-
-
-
       <Routes>
         <Route path="/" element={<Home />} />
-
-
         <Route path="/GamePage" element={<GamePage />} />
         <Route path="/leaderboard" element={<Leaderboard />}></Route>
         <Route  path="/leaderboardforum" element={ <LeaderBoardFormPage />}/>
-
         <Route path="/credits/" element={<Credits />} />
-
         <Route path="*" element={<ErrorPage />} />
-
-
       </Routes>
     </div>
   );
