@@ -1,5 +1,8 @@
-body {
+html {
     background-color: #e3f4f3;
+}
+.page {
+    min-height: calc(100vh - 41px);
 }
 
 .header {
@@ -86,16 +89,6 @@ p {
 }
 
 
-footer {
-    text-align: center;
-    margin-top: 212px;
-    padding: 10px;
-    background-color: #6056f6;
-    font-size: 0.9rem;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
 .flex {
     display: flex;
     flex-direction: column;

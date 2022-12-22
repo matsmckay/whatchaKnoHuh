@@ -14,7 +14,7 @@ import Home from './Routes/Home';
 
 function App() {
   return (
-    <div className='homePage'>
+    <div className='page'>
       <div className='wrapper'>
         <header className='header'>
           <h1> <Link to="/">What do YOU no?</Link></h1>
@@ -30,9 +30,6 @@ function App() {
           </nav>
         </header>
       </div>
-        <footer>
-          Juno College is epic
-        </footer>
 
       <Routes>
         <Route path="/" element={<Home />} />
