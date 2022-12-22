@@ -5,7 +5,6 @@ const Credits = () => {
         <div className="creditsDiv">
             <div className="wrapper">
                 <h2 className="creditHeader">MEET THE TEAM</h2>
-                {/* Outlet is where on the page you want stuff to render */}
                 <ul className="creditsTeamUl">
                     <li className="creditsTeamLi">
                         <img className="creditImg" src="https://ca.slack-edge.com/T02E8L5NKFV-U044ASBKNFM-bc3823597214-512" alt="" />
@@ -35,7 +34,6 @@ const Credits = () => {
                         <p className="creditsHomepage"><a href="https://www.matthewmckay.com">matthewmckay.com</a></p>
                         <p><a className="creditsEmail" href="mailto:matthewmckay@gmail.com">Contact</a></p>
                     </li>
-                    {/* <Outlet /> */}
                 </ul>
             </div>
         </div>

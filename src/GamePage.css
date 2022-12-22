@@ -62,6 +62,16 @@
     color: #6056f6;
 }
 
-/* * {
-    border: 1px solid red;
-}  */
+
+/* MEDIA QS */
+
+@media (max-width: 895px) {
+    .fetch {
+        flex-direction: column;
+        height: fit-content;
+    }
+    .buttons, .pointProgress{
+        margin-bottom: 20px;
+    }
+    
+}

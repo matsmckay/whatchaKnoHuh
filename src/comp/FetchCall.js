@@ -6,7 +6,6 @@ import TrueOrFalseButton from "./TrueOrFalseButton";
 
 const FetchCall = () => {
 
-
     //state below displays array of homo words to page
     const [displayHomo, setDisplayHomo] = useState([]);
 
@@ -16,20 +15,16 @@ const FetchCall = () => {
     //this state is for the button to trigger rerender 
     const [triggerReRender, setTriggerReRender] = useState(false);
     // const [oneWord, setOneWord] = useState('');
-
-    
-    //this var selects random word from the hook
     
     useEffect (() => {
-        
-        let randomWord  = getRandom();
-    
 
-       
-    if (wordDef) {
+        let randomWord  = getRandom();
+        if (wordDef) {
         return
-    }
+        }
+
         axios({
+
             url: `https://api.datamuse.com/words`,
             method: "GET",
             dataResponse: "json",
@@ -37,37 +32,22 @@ const FetchCall = () => {
                 rel_hom: randomWord,
                 max: 1,
             }
+
         }).then((response) => {
-            //NEXT STEP : ADD error handling for when only one word is returned - have the api run again until two words are returned
-            
- 
+
             const similarSound = response.data[0]; 
-  
-           
-            
-            console.log("looking at the fetch call data", similarSound);
+    
             if (similarSound === undefined || similarSound.numSyllables > 1 ) {
                 setTriggerReRender(!triggerReRender)
             }
             else {
-
                 const twoWords = [similarSound.word, randomWord];
-          
-                
                 const wordChoice = (twoWords[Math.floor(Math.random() * twoWords.length)]);
-            
-                
                 setWordDef(wordChoice);
-                
                 setDisplayHomo(twoWords);
-            
-                
             }
         })
     } ,[wordDef,triggerReRender])
-
-
- 
     
     return (
         <div className="fetch">
@@ -77,14 +57,12 @@ const FetchCall = () => {
             </div>
             <TrueOrFalseButton
             setWordDef={setWordDef}
- 
-             displayHomo={displayHomo}
-             wordDef={wordDef}             
-             />
+            displayHomo={displayHomo}
+            wordDef={wordDef}             
+            />
         </div>
     )
     }
-
 export default FetchCall;
 
 //SI CODE

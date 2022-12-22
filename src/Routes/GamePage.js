@@ -9,7 +9,6 @@ const GamePage = () => {
                 </div>
             </div>
         </div>
-
     )
 }
 

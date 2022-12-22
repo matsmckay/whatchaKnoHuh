@@ -9,11 +9,8 @@ const [progressBar, setProgressBar] = useState(0)
 
 const navigate = useNavigate();
 
-
   const handleClick = () => {
 
-
-    
     if (progressBar < 10) {
       if ( displayHomo[0] === wordDef) {
         setUserScore(userScore + 1)
@@ -23,8 +20,8 @@ const navigate = useNavigate();
        }
       setWordDef('')
       setProgressBar(progressBar +1)
-
     }
+
     else {
       if ( displayHomo[0] === wordDef) {
         setUserScore(userScore + 1)
@@ -34,8 +31,7 @@ const navigate = useNavigate();
        }
       navigate("/leaderboardforum", {
         state : {userScore : userScore}
-      } )
-      // LINK TO LeaderBoardFormPage
+      })
     }
   } 
 
@@ -46,10 +42,9 @@ const navigate = useNavigate();
       }
       else {
         setUserScore(userScore -0.5)
-       }
-       setWordDef('')
+      }
+      setWordDef('')
       setProgressBar(progressBar +1)
-
     }
     else {
       if ( displayHomo[1] === wordDef) {
@@ -60,11 +55,9 @@ const navigate = useNavigate();
        }
        navigate("/leaderboardforum", {
         state : {userScore : userScore}
-      } )
-      // LINK TO LeaderBoardFormPage
+      })
     }
   } 
-
 
   return(
     <>
