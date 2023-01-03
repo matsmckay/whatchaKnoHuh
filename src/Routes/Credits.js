@@ -16,7 +16,7 @@ const Credits = () => {
                     <li className="creditsTeamLi">
                         <img className="creditImg" src="https://ca.slack-edge.com/T02E8L5NKFV-U044PJ6CK41-98d008615619-512" alt="" />
                         <h3 className="team">Daman Matharoo</h3>
-                        <p className="creditBio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste provident, inventore excepturi nesciunt neque sed temporibus error explicabo dolorem, quo ducimus sit! Porro atque veniam est animi tempore quaerat ut.</p>
+                        <p className="creditBio">I am a front-end web developer passionate about creating engaging, accessible and responsive websites and apps. I have worked in the customer service industry for nearly a decade where I was able to develop my aptitude for effective communication, leadership and complex problem-solving. My hobbies include all things soccer. </p>
                         <p className="creditsHomepage"><a href="https://www.damanmatharoo.com">damanmatharoo.com</a></p>
                         <p><a className="creditsEmail" href="mailto:damanmatharoo4@gmail.com">Contact</a></p>
                     </li>
