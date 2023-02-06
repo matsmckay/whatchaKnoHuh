@@ -2,8 +2,8 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 
 const WordDef = ({ wordDef, setWordDef }) => {
-  // const keyRadojko = 'cb0kpdqhzyzmlou550ldukoadiyayyvp5607r0qnhpxxo85fb'
-  const keyMatt = '27lonz8iuunssx6o3uadbmcjgcyja363kgwsvbkxoqdada30f'
+  const keyRadojko = 'cb0kpdqhzyzmlou550ldukoadiyayyvp5607r0qnhpxxo85fb'
+  // const keyMatt = '27lonz8iuunssx6o3uadbmcjgcyja363kgwsvbkxoqdada30f'
 
   const [responseDef, setResponseDef] = useState('');
   
@@ -24,7 +24,7 @@ const WordDef = ({ wordDef, setWordDef }) => {
         params: {
           word: word,
           limit: 10,
-          api_key: keyMatt
+          api_key: keyRadojko
         }
       }).then((response) => {
         let arrayOfDefinitions = response.data
@@ -54,3 +54,4 @@ const WordDef = ({ wordDef, setWordDef }) => {
 }
 
 export default WordDef;
+

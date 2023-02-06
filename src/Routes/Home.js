@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 const Home = () => {
 
     return (
-        <>
             <div className='wrapper'>
                 <section className='howToPlay'>
                     <div className='howToFlex'>
@@ -15,14 +14,11 @@ const Home = () => {
                         At the end, players have the option to save their score to the leaderboard! 
                         </p>
                         <div className='btnDiv'>
-                            <button className='play'>
-                                <Link to="/GamePage">Play Now!</Link>
-                            </button>
+                                <Link  className='play 'to="/GamePage">Play Now!</Link>
                         </div>
                     </div>
                 </section>
             </div>
-        </>
 
     )
 }
