@@ -65,6 +65,16 @@
   cursor: pointer;
 }
 
+.LeaderForm form .userNameInputButton:hover,
+.LeaderForm form .userNameInputButton:focus {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: #cfff31;
+  color: #6056f6;
+}
+
+
 .FormPage p {
   font-size: 3rem;
 }
@@ -84,7 +94,7 @@
 }
 
 .fadeIn.visiable {
-  animation: fadeIn 1s ease-out forwards;
+  animation: fadeIn 2s ease-out forwards;
 }
 
 @keyframes fadeIn {
@@ -106,4 +116,36 @@
   font-weight: bold;
   color: white;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width:1140px) {
+  @keyframes fadeIn {
+    0% {
+      transform: translate(-50%, -50%) scale(0.5);
+    }
+    30% {
+      transform: translate(-50%, -50%) scale(1.5);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(2.5) rotate(720deg);
+      opacity: 0;
+    }
+  }  
+}
+
+@media (max-width:730px) {
+  @keyframes fadeIn {
+    0% {
+      transform: translate(-50%, -50%) scale(0.3);
+    }
+    30% {
+      transform: translate(-50%, -50%) scale(0.8);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1.2) rotate(720deg);
+      opacity: 0;
+    }
+  } 
 }
