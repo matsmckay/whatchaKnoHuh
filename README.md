@@ -1,6 +1,6 @@
-# Homonymy
+# What do YOU no
 
-Homonymy is a fun game that challenges players to differentiate between homonyms. With ten new questions every game, see if you have what it takes to make the coveted leaderboard! 
+What do YOU no is a fun game that challenges players to differentiate between homonyms. With ten new questions every game, see if you have what it takes to make the coveted leaderboard! 
 
 This project was built using React, Firebase, HTML, CSS, and RESTful APIs as a group project at Juno College of Technology.
 
