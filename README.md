@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Homonymy
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Homonymy is a fun game that challenges players to differentiate between homonyms. With ten new questions every game, see if you have what it takes to make the coveted leaderboard! 
 
-## Available Scripts
+This project was built using React, Firebase, HTML, CSS, and RESTful APIs as a group project at Juno College of Technology.
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+- [Technologies Used](#technologies-used)
+- [Live Site URL](#live-site-url)
+- [Getting Started](#getting-started)
+- [Features](#features)
+- [Contributing](#contributing)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- React
+- Firebase
+- HTML
+- CSS
+- RESTful APIs
 
-### `npm test`
+## Live Site URL
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Check out the live site here! 😊 https://whatchuknohuh.netlify.app/
 
-### `npm run build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To get started with this project, clone this repository to your local machine by running the following command in your terminal:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```sh
+git clone https://github.com/your-username/homonymy.git
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Once you have cloned the repository, navigate to the root folder of the project and install the dependencies by running:
 
-### `npm run eject`
+```sh
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+After installing the dependencies, start the development server by running:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```sh
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This will start the application in your browser at `http://localhost:3000/`.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Features
 
-## Learn More
+- Play a game to differentiate between homonyms
+- User authentication and leaderboard functionality using Firebase
+- Ten new questions every game
+- RESTful APIs to generate homonyms questions
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Contributing
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project was a group project completed at Juno College of Technology, and is not currently accepting contributions. If you are interested in contributing to a project, please check out our other repositories or contact us directly.
